@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG DAY — INTAKE 26 | One Batch. One Bond. Endless Memories.</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Outfit, Space Grotesk, and Hind Siliguri for Bangla -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'Hind Siliguri', 'sans-serif'],
+                        bangla: ['Hind Siliguri', 'Outfit', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    },
+                    colors: {
+                        midnight: '#050814',
+                        deepnavy: '#0B1124',
+                        electric: '#2563EB',
+                        cyanGlow: '#06B6D4',
+                        goldGlow: '#F59E0B',
+                        roseGlow: '#EC4899',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'shimmer': 'shimmer 2.5s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base Styling & Custom Scrollbar */
+        body {
+            background-color: #050814;
+            color: #F8FAFC;
+            font-family: 'Outfit', 'Hind Siliguri', sans-serif;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050814;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #2563EB, #06B6D4);
+            border-radius: 9999px;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.68);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-nav {
+            background: rgba(5, 8, 20, 0.82);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+        }
+
+        /* Gradient Text */
+        .text-gradient-blue {
+            background: linear-gradient(135deg, #60A5FA 0%, #38BDF8 45%, #818CF8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #FB7185 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Photo Enhancement Modes for Habib Resort Photos */
+        .photo-frame {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Pro HDR Enhancement (Default): Lifts shadows, enriches colors, sharpens details */
+        .enhance-hdr {
+            filter: url(#svg-sharpen) brightness(1.14) contrast(1.16) saturate(1.32);
+            transition: filter 0.45s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        /* Extra shadow boost for darker night images in HDR mode */
+        .enhance-hdr.night-shot {
+            filter: url(#svg-sharpen) brightness(1.22) contrast(1.18) saturate(1.38);
+        }
+
+        /* Neon Night Glow Preset */
+        .enhance-neon {
+            filter: url(#svg-sharpen) brightness(1.24) contrast(1.25) saturate(1.55) hue-rotate(-6deg);
+            transition: filter 0.45s ease, transform 0.6s ease;
+        }
+
+        /* Golden Warmth Preset */
+        .enhance-golden {
+            filter: url(#svg-sharpen) brightness(1.15) contrast(1.14) saturate(1.35) sepia(0.18);
+            transition: filter 0.45s ease, transform 0.6s ease;
+        }
+
+        /* Raw Original Preset */
+        .enhance-raw {
+            filter: none !important;
+            transition: filter 0.45s ease, transform 0.6s ease;
+        }
+
+        /* Ambient Cinematic Vignette & Bloom Overlay on Enhanced Photos */
+        .hdr-overlay {
+            background: radial-gradient(circle at center, transparent 55%, rgba(5, 8, 20, 0.45) 100%),
+                        linear-gradient(to top, rgba(5, 8, 20, 0.85) 0%, transparent 45%);
+            pointer-events: none;
+        }
+
+        /* Route Animated Dash Line */
+        .route-line {
+            stroke-dasharray: 10 8;
+            animation: dashMove 18s linear infinite;
+        }
+        @keyframes dashMove {
+            to {
+                stroke-dashoffset: -400;
+            }
+        }
+
+        /* Ticket Perforation Styling */
+        .ticket-cutout-left, .ticket-cutout-right {
+            position: absolute;
+            top: 50%;
+            width: 28px;
+            height: 28px;
+            background-color: #050814;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+        .ticket-cutout-left { left: -15px; border-right: 1px solid rgba(56, 189, 248, 0.3); }
+        .ticket-cutout-right { right: -15px; border-left: 1px solid rgba(56, 189, 248, 0.3); }
+
+        /* Reveal on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-600 selection:text-white">
+
+    <!-- Hidden SVG Filter for Optical Image Crisping/Sharpening on Resort Photos -->
+    <svg class="hidden" width="0" height="0" aria-hidden="true">
+        <defs>
+            <filter id="svg-sharpen">
+                <feConvolveMatrix order="3 3" preserveAlpha="true" kernelMatrix="0 -0.35 0 -0.35 2.4 -0.35 0 -0.35 0" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Full-Screen Celebration Confetti Canvas -->
+    <canvas id="confetti-canvas" class="fixed inset-0 pointer-events-none z-50 w-full h-full"></canvas>
+
+    <!-- Top Announcement Ticker -->
+    <div class="bg-gradient-to-r from-blue-900/90 via-indigo-900/90 to-cyan-900/90 border-b border-cyan-500/20 text-xs sm:text-sm py-2 px-4 text-center font-bangla relative z-40">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2 sm:gap-4">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/30 font-semibold animate-pulse">
+                <i class="fa-solid fa-fire text-amber-400"></i> INTAKE 26 OFFICIAL
+            </span>
+            <span class="text-slate-100">🎓 <strong>RAG DAY — INTAKE 26</strong> | 📅 ১৩ নভেম্বর ২০২৬ | 📍 হাবিব রিসোর্ট, ডেন্ডাবর ১৩৪৪, সাভার</span>
+            <a href="#register" class="text-cyan-300 hover:text-white underline font-semibold inline-flex items-center gap-1">
+                রেজিস্ট্রেশন চলছে (৳১৯৯৯) <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Sticky Glassmorphism Navigation -->
+    <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-blue-600 via-cyan-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-graduation-cap text-white text-lg sm:text-xl"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="font-extrabold tracking-tight text-lg sm:text-xl text-white">INTAKE <span class="text-cyan-400">26</span></span>
+                        <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">RAG DAY '26</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 hidden sm:block">One Batch. One Bond. Endless Memories. 💙</p>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-300 font-bangla">
+                <a href="#story" class="hover:text-cyan-400 transition-colors">আমাদের গল্প</a>
+                <a href="#segments" class="hover:text-cyan-400 transition-colors">ইভেন্ট সেগমেন্ট</a>
+                <a href="#gallery" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5">
+                    <span>হাবিব রিসোর্ট গ্যালারি</span>
+                    <span class="px-1.5 py-0.2 text-[10px] rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">HDR</span>
+                </a>
+                <a href="#scribble-wall" class="hover:text-cyan-400 transition-colors">টি-শার্ট মেমোরি ওয়াল</a>
+                <a href="#route" class="hover:text-cyan-400 transition-colors">জাবি ➔ রিসোর্ট ম্যাপ</a>
+                <a href="#squad" class="hover:text-cyan-400 transition-colors">ব্যাচমেট লিস্ট</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-2.5 sm:gap-3">
+                <button onclick="triggerCelebration()" title="Celebrate Rag Day!" class="p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-amber-400 border border-slate-700 transition-all hover:scale-105 active:scale-95">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </button>
+                <a href="#register" class="px-4 sm:px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-blue-600/30 flex items-center gap-2 transition-all hover:scale-105 active:scale-95 font-bangla">
+                    <span>রেজিস্ট্রেশন করো</span>
+                    <i class="fa-solid fa-bolt text-amber-300"></i>
+                </a>
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl bg-slate-800/80 text-slate-200 border border-slate-700">
+                    <i id="menu-icon" class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-card border-t border-slate-800 px-4 pt-3 pb-5 space-y-2 font-bangla">
+            <a href="#story" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-slate-800/70 text-slate-200">💙 আমাদের গল্প (Our Story)</a>
+            <a href="#segments" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-slate-800/70 text-slate-200">🎭 এক্সাইটিং সেগমেন্টসমূহ (Segments)</a>
+            <a href="#gallery" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-slate-800/70 text-amber-300 font-medium">✨ হাবিব রিসোর্ট ফটো গ্যালারি (Enhanced HDR)</a>
+            <a href="#scribble-wall" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-slate-800/70 text-slate-200">👕 ভার্চুয়াল টি-শার্ট মেমোরি ওয়াল</a>
+            <a href="#route" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg hover:bg-slate-800/70 text-cyan-300 font-medium">🗺️ জাহাঙ্গীরনগর বিশ্ববিদ্যালয় ➔ হাবিব রিসোর্ট রুট</a>
+            <a href="#register" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-lg bg-blue-600/30 border border-blue-500/40 text-white font-semibold text-center mt-2">🚀 এখনই রেজিস্ট্রেশন করো (১৯৯৯ টাকা)</a>
+        </div>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden py-12 sm:py-20">
+        <!-- Enhanced Background Hero Photo from Habib Resort with Parallax & Gradient Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/resort-08.jpg" 
+                 alt="Habib Resort Night Lake View" 
+                 class="w-full h-full object-cover enhance-hdr night-shot scale-105 animate-pulse-slow"
+                 onerror="this.onerror=null;this.src='assets/resort-05.jpg'">
+            <div class="absolute inset-0 bg-gradient-to-b from-midnight/85 via-midnight/75 to-midnight"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-600/25 via-transparent to-transparent"></div>
+        </div>
+
+        <!-- Ambient Floating Particles Canvas -->
+        <canvas id="hero-particles" class="absolute inset-0 z-0 pointer-events-none"></canvas>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Top Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-cyan-500/40 text-cyan-300 text-xs sm:text-sm font-bold tracking-wide mb-6 shadow-lg shadow-cyan-500/10 animate-float">
+                <span>🎓🔥 THE WAIT IS OVER, INTAKE 26! 🔥🎓</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08] mb-6">
+                <span class="block text-white drop-shadow-md">RAG DAY — <span class="text-gradient-blue">INTAKE 26</span></span>
+                <span class="block text-xl sm:text-3xl lg:text-4xl font-bold mt-3 text-gradient-gold">
+                    💙 One Batch. One Bond. Endless Memories. 💙
+                </span>
+            </h1>
+
+            <!-- Emotional Bangla Intro Box -->
+            <div class="max-w-3xl mx-auto glass-card rounded-2xl p-5 sm:p-7 border border-blue-500/20 shadow-2xl mb-8 font-bangla text-slate-200 leading-relaxed text-base sm:text-lg">
+                <p class="font-semibold text-cyan-300 text-lg sm:text-xl mb-2">
+                    “একটা ব্যাচ, হাজারো গল্প, অসংখ্য স্মৃতি—আর এবার সবকিছু একসাথে উদযাপন করার পালা! 💙”
+                </p>
+                <p class="text-slate-300 text-sm sm:text-base">
+                    আমাদের ক্যাম্পাসের সেই চেনা মুখগুলো, একসাথে কাটানো হাসি-আড্ডা, পাগলামি, বন্ধুত্ব আর জীবনের সেরা কিছু মুহূর্তকে স্মৃতির পাতায় চিরদিনের জন্য রেখে দিতে আসছে আমাদের বহুল প্রতীক্ষিত <strong class="text-white">RAG DAY — INTAKE 26! 🎉✨</strong>
+                </p>
+            </div>
+
+            <!-- Key Event Info Pills -->
+            <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-9 font-bangla">
+                <div class="glass-card px-4 py-3 rounded-2xl border border-blue-500/30 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-400/30 flex items-center justify-center text-blue-400">
+                        <i class="fa-regular fa-calendar-check text-lg"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-[11px] uppercase tracking-wider text-slate-400">তারিখ (Event Date)</p>
+                        <p class="text-sm sm:text-base font-bold text-white">১৩ নভেম্বর ২০২৬ (13 Nov)</p>
+                    </div>
+                </div>
+
+                <a href="#route" class="glass-card px-4 py-3 rounded-2xl border border-amber-500/30 hover:border-amber-400 transition-all flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-location-dot text-lg"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-[11px] uppercase tracking-wider text-slate-400">ভেন্যু (Spot • 4.6★)</p>
+                        <p class="text-sm sm:text-base font-bold text-amber-300 flex items-center gap-1">
+                            হাবিব রিসোর্ট, ডেন্ডাবর ১৩৪৪ <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-75"></i>
+                        </p>
+                    </div>
+                </a>
+
+                <div class="glass-card px-4 py-3 rounded-2xl border border-emerald-500/30 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-400">
+                        <i class="fa-solid fa-ticket text-lg"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-[11px] uppercase tracking-wider text-slate-400">রেজিস্ট্রেশন ফি</p>
+                        <p class="text-sm sm:text-base font-bold text-emerald-300">মাত্র ১৯৯৯ টাকা (৳1,999)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Countdown Timer to November 13, 2026 -->
+            <div class="max-w-xl mx-auto mb-10">
+                <p class="text-xs font-mono uppercase tracking-widest text-cyan-400 mb-3 flex items-center justify-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                    COUNTDOWN TO NOVEMBER 13, 2026
+                </p>
+                <div class="grid grid-cols-4 gap-2.5 sm:gap-4">
+                    <div class="glass-card rounded-2xl p-3 sm:p-4 border border-cyan-500/25 shadow-lg">
+                        <span id="cd-days" class="block text-2xl sm:text-4xl font-mono font-extrabold text-white">25</span>
+                        <span class="text-[11px] sm:text-xs text-slate-400 font-bangla">দিন (Days)</span>
+                    </div>
+                    <div class="glass-card rounded-2xl p-3 sm:p-4 border border-cyan-500/25 shadow-lg">
+                        <span id="cd-hours" class="block text-2xl sm:text-4xl font-mono font-extrabold text-cyan-300">09</span>
+                        <span class="text-[11px] sm:text-xs text-slate-400 font-bangla">ঘণ্টা (Hours)</span>
+                    </div>
+                    <div class="glass-card rounded-2xl p-3 sm:p-4 border border-cyan-500/25 shadow-lg">
+                        <span id="cd-mins" class="block text-2xl sm:text-4xl font-mono font-extrabold text-amber-300">10</span>
+                        <span class="text-[11px] sm:text-xs text-slate-400 font-bangla">মিনিট (Mins)</span>
+                    </div>
+                    <div class="glass-card rounded-2xl p-3 sm:p-4 border border-cyan-500/25 shadow-lg">
+                        <span id="cd-secs" class="block text-2xl sm:text-4xl font-mono font-extrabold text-rose-400">00</span>
+                        <span class="text-[11px] sm:text-xs text-slate-400 font-bangla">সেকেন্ড (Secs)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero CTAs -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 font-bangla">
+                <a href="#register" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-base sm:text-lg shadow-xl shadow-blue-600/30 flex items-center justify-center gap-3 transition-all hover:scale-105 active:scale-95">
+                    <span>🚀 এখনই রেজিস্ট্রেশন করো</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-white/20 text-xs font-mono">৳১৯৯৯</span>
+                </a>
+                <a href="#gallery" class="w-full sm:w-auto px-7 py-4 rounded-2xl glass-card hover:bg-slate-800/80 text-white font-semibold text-base sm:text-lg border border-slate-600/60 flex items-center justify-center gap-2.5 transition-all hover:scale-105">
+                    <i class="fa-solid fa-images text-amber-400"></i>
+                    <span>হাবিব রিসোর্ট ঘুরে দেখো (১০টি ছবি)</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= EMOTIONAL MANIFESTO & STORY SECTION ================= -->
+    <section id="story" class="py-16 sm:py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center reveal">
+                <!-- Left Column: Emotional Copy from User's Announcement -->
+                <div class="lg:col-span-7 space-y-6 font-bangla">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-300 text-xs font-semibold">
+                        <i class="fa-solid fa-heart text-rose-400"></i> OUR BATCH, OUR LEGACY
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">
+                        এটা শুধু একটা অনুষ্ঠান নয়—এটা আমাদের <span class="text-gradient-blue">একসাথে বেড়ে ওঠার গল্প!</span> 🫶
+                    </h2>
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                        ক্লাসরুমের বেঞ্চ, টং দোকানের চায়ের কাপ, অ্যাসাইনমেন্টের তাড়াহুড়ো, আর হুটহাট প্ল্যানে ঘুরতে যাওয়া—দেখতে দেখতে আমাদের <strong class="text-white">Intake 26</strong>-এর ঝুলিতে জমা হয়েছে হাজারো অমলিন স্মৃতি।
+                    </p>
+                    <blockquote class="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-blue-950/80 to-indigo-950/60 border-l-4 border-cyan-400 text-slate-100 text-base sm:text-lg italic shadow-lg">
+                        “এটা আমাদের বন্ধুত্বের উদযাপন, আর এমন কিছু মুহূর্ত তৈরি করার সুযোগ, যেগুলো বহু বছর পরেও মুখে হাসি ফুটিয়ে তুলবে। তাই প্রস্তুত হয়ে যাও, Intake 26! বন্ধুদের নিয়ে এসো, হাসিটা সঙ্গে রেখো, আর তৈরি হও এমন একটা দিন কাটানোর জন্য—যে দিনের গল্প আমরা বারবার বলতে চাইব! 🎈🎊”
+                    </blockquote>
+
+                    <!-- 3 Pillars of the Vibe -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                        <div class="glass-card p-4 rounded-xl border border-amber-500/30 text-center">
+                            <span class="text-2xl block mb-1">🔥</span>
+                            <p class="font-bold text-white text-sm sm:text-base">The Vibe Is Ours.</p>
+                            <p class="text-xs text-slate-400">উত্তেজনা ও আনন্দের বাঁধভাঙা জোয়ার</p>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl border border-cyan-500/30 text-center">
+                            <span class="text-2xl block mb-1">💙</span>
+                            <p class="font-bold text-cyan-300 text-sm sm:text-base">The Memories Are Ours.</p>
+                            <p class="text-xs text-slate-400">হাজারো ছবি ও আজীবনের বন্ধুত্ব</p>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl border border-rose-500/30 text-center">
+                            <span class="text-2xl block mb-1">🎓</span>
+                            <p class="font-bold text-amber-300 text-sm sm:text-base">THE RAG DAY IS OURS!</p>
+                            <p class="text-xs text-slate-400">Let's Make It Legendary! 🚀</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Featured Enhanced Photo Collage of Habib Resort -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-3xl overflow-hidden border-2 border-cyan-500/30 shadow-2xl shadow-blue-900/40 group">
+                        <img src="assets/resort-13.jpg" 
+                             alt="Batchmate overlooking Habib Resort at night" 
+                             class="w-full h-[380px] sm:h-[440px] object-cover enhance-hdr night-shot group-hover:scale-105 transition-transform duration-700"
+                             onerror="this.onerror=null;this.src='assets/resort-06.jpg'">
+                        <div class="absolute inset-0 hdr-overlay"></div>
+                        <div class="absolute bottom-5 left-5 right-5 glass-card p-4 rounded-2xl border border-white/15">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-[11px] font-mono uppercase text-amber-300 block">📍 HABIB RESORT BALCONY VIEW</span>
+                                    <h3 class="text-base sm:text-lg font-bold text-white font-bangla">অপেক্ষার প্রহর শেষ, দেখা হচ্ছে ১৩ নভেম্বর!</h3>
+                                </div>
+                                <button onclick="openLightbox(6)" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors">
+                                    <i class="fa-solid fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Floating Secondary Card -->
+                    <div class="hidden sm:flex items-center gap-3 glass-card p-3.5 rounded-2xl border border-amber-400/40 shadow-xl absolute -bottom-6 -left-6 animate-float">
+                        <img src="assets/resort-05.jpg" alt="Golden Bench" class="w-14 h-14 rounded-xl object-cover enhance-hdr">
+                        <div class="font-bangla pr-2">
+                            <p class="text-xs font-bold text-amber-300">✨ Golden Hour Adda</p>
+                            <p class="text-[11px] text-slate-300">আনলিমিটেড ছবি তোলার সুযোগ!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= EXCITING SEGMENTS & DAY TIMELINE ================= -->
+    <section id="segments" class="py-16 sm:py-24 bg-deepnavy/60 border-y border-slate-800/80 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14 reveal font-bangla">
+                <span class="px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider">
+                    🎮 থাকছে এক্সাইটিং সব সেগমেন্ট!
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4">
+                    সকাল থেকে সন্ধ্যা—<span class="text-gradient-gold">ভরপুর আয়োজন!</span> 🎭🍽️
+                </h2>
+                <p class="text-slate-300 text-base sm:text-lg">
+                    গেমস ও কালচারাল প্রোগ্রামে থাকবে নাচ, গান ও অভিনয়ের দারুণ আয়োজন। মনোরম পরিবেশে থাকছে আনলিমিটেড ছবি তোলার সুযোগ এবং ভরপুর মজার খাওয়াদাওয়া!
+                </p>
+            </div>
+
+            <!-- 6 Interactive Segment Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 font-bangla reveal">
+                <!-- Segment 1 -->
+                <div class="glass-card rounded-3xl p-6 border border-blue-500/20 hover:border-cyan-400/50 transition-all duration-300 hover:-translate-y-1.5 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            👕
+                        </div>
+                        <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-800 text-cyan-300 border border-slate-700">09:00 AM - 10:30 AM</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">গ্র্যান্ড এন্ট্রি, টি-শার্ট ও রঙ উৎসব</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        সকালে জাবি ক্যাম্পাস থেকে রিসোর্টে গ্র্যান্ড এন্ট্রি! ওয়েলকাম ড্রিংকস, এক্সক্লুসিভ Intake 26 র‍্যাগ ডে টি-শার্ট ও গিফট কিট গ্রহণ এবং বন্ধুদের টি-শার্টে মার্কার দিয়ে অটোগ্রাফ ও স্মৃতি লেখা।
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs text-blue-300">
+                        <span class="px-2.5 py-1 rounded-lg bg-blue-950/80 border border-blue-800/50">#ExclusiveTshirt</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-blue-950/80 border border-blue-800/50">#ScribbleVibe</span>
+                    </div>
+                </div>
+
+                <!-- Segment 2 -->
+                <div class="glass-card rounded-3xl p-6 border border-emerald-500/20 hover:border-emerald-400/50 transition-all duration-300 hover:-translate-y-1.5 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            🎮
+                        </div>
+                        <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-800 text-emerald-300 border border-slate-700">10:30 AM - 01:00 PM</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">গেমস, লেক বোটিং ও আড্ডা</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        হাবিব রিসোর্টের বিশাল সবুজ মাঠে মজার সব আউটডোর গেমস, লেকে সোয়ান প্যাডেল বোটিং, ফানি ব্যাচ টাইটেল ভোটিং এবং আকর্ষণীয় পুরস্কার জেতার সুযোগ!
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs text-emerald-300">
+                        <span class="px-2.5 py-1 rounded-lg bg-emerald-950/80 border border-emerald-800/50">#SwanBoating</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-emerald-950/80 border border-emerald-800/50">#BatchGames</span>
+                    </div>
+                </div>
+
+                <!-- Segment 3 -->
+                <div class="glass-card rounded-3xl p-6 border border-amber-500/20 hover:border-amber-400/50 transition-all duration-300 hover:-translate-y-1.5 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-600/20 border border-amber-500/30 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            📸
+                        </div>
+                        <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-800 text-amber-300 border border-slate-700">ALL DAY LONG</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">আনলিমিটেড ফটোশুট ও সিনেমাটিক রিলস</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        রিসোর্টের পাম অ্যাভিনিউ, রঙিন ল্যান্টার্ন ওয়াকওয়ে, ওভারওয়াটার ভিলা ও নিয়ন ব্রিজে প্রফেশনাল ফটোগ্রাফারদের সাথে আনলিমিটেড পোর্ট্রেট ও গ্রুপ ফটোশুট!
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs text-amber-300">
+                        <span class="px-2.5 py-1 rounded-lg bg-amber-950/80 border border-amber-800/50">#DSLRPhotoshoot</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-amber-950/80 border border-amber-800/50">#DroneGroupShot</span>
+                    </div>
+                </div>
+
+                <!-- Segment 4 -->
+                <div class="glass-card rounded-3xl p-6 border border-rose-500/20 hover:border-rose-400/50 transition-all duration-300 hover:-translate-y-1.5 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-rose-600/20 border border-rose-500/30 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            🍽️
+                        </div>
+                        <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-800 text-rose-300 border border-slate-700">01:30 PM - 03:00 PM</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">ভরপুর মজার খাওয়াদাওয়া (Grand Feast)</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        সকালের নাস্তা থেকে শুরু করে দুপুরে রাজকীয় স্পেশাল লাঞ্চ মেনু, ডেজার্ট এবং বিকেলে গরম গরম ইভনিং স্ন্যাকস ও চায়ের আড্ডা—সবাই একসাথে এক টেবিলে!
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs text-rose-300">
+                        <span class="px-2.5 py-1 rounded-lg bg-rose-950/80 border border-rose-800/50">#RoyalLunch</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-rose-950/80 border border-rose-800/50">#EveningSnacks</span>
+                    </div>
+                </div>
+
+                <!-- Segment 5 -->
+                <div class="glass-card rounded-3xl p-6 border border-purple-500/20 hover:border-purple-400/50 transition-all duration-300 hover:-translate-y-1.5 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            🎭
+                        </div>
+                        <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-800 text-purple-300 border border-slate-700">03:30 PM - 06:00 PM</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">কালচারাল প্রোগ্রাম: নাচ, গান ও অভিনয়</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        আমাদের নিজেদের ব্যাচমেটদের প্রাণবন্ত নাচ, গান, ক্যাম্পাস লাইফ নিয়ে মজার স্কিট/অভিনয়, ফ্যাশন র‍্যাম্প এবং মেমোরি শেয়ারিং সেশন।
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs text-purple-300">
+                        <span class="px-2.5 py-1 rounded-lg bg-purple-950/80 border border-purple-800/50">#CulturalShow</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-purple-950/80 border border-purple-800/50">#DanceMusicDrama</span>
+                    </div>
+                </div>
+
+                <!-- Segment 6 -->
+                <div class="glass-card rounded-3xl p-6 border border-cyan-500/20 hover:border-cyan-400/50 transition-all duration-300 hover:-translate-y-1.5 group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-600/20 border border-cyan-500/30 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            🎸
+                        </div>
+                        <span class="text-xs font-mono px-3 py-1 rounded-full bg-slate-800 text-cyan-300 border border-slate-700">06:00 PM - NIGHT</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">LUMINA নাইট গ্লো ও কোরাসে গলা মেলানো</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        সন্ধ্যা নামতেই হাবিব রিসোর্টের রঙিন ল্যান্টার্ন ও লেকের আলোকসজ্জার মাঝে ফ্ল্যাশলাইট জ্বালিয়ে পুরো ব্যাচ একসাথে প্রিয় গানের কোরাসে গলা মেলাবে!
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs text-cyan-300">
+                        <span class="px-2.5 py-1 rounded-lg bg-cyan-950/80 border border-cyan-800/50">#LuminaNight</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-cyan-950/80 border border-cyan-800/50">#Intake26Forever</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= HDR ENHANCED VENUE GALLERY (ALL 10 UPLOADED PHOTOS) ================= -->
+    <section id="gallery" class="py-16 sm:py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header + Live HDR Enhancement Switcher -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6 reveal">
+                <div class="font-bangla">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-bold mb-3">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> AI / HDR ENHANCED VENUE SPOTLIGHT
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white">
+                        আমাদের স্পট: <span class="text-gradient-gold">হাবিব রিসোর্ট, ডেন্ডাবর ১৩৪৪</span> ✨
+                    </h2>
+                    <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
+                        তোমাদের পাঠানো হাবিব রিসোর্টের আসল ছবিগুলোকে আমরা ওয়েবসাইটে <strong class="text-cyan-300">Optical HDR Color-Grading & Shadow Enhancement</strong> দিয়ে আরও উজ্জ্বল ও প্রাণবন্ত করেছি। নিচের বাটন থেকে ফটো ফিল্টার পরিবর্তন বা জুম করে দেখো!
+                    </p>
+                </div>
+
+                <!-- Interactive HDR Photo Enhancer Control Bar -->
+                <div class="glass-card p-2 rounded-2xl border border-slate-700/80 flex flex-wrap items-center gap-1.5 self-start lg:self-auto">
+                    <span class="text-xs font-mono text-slate-400 px-2.5 py-1"><i class="fa-solid fa-sliders text-cyan-400 mr-1"></i> Photo Grade:</span>
+                    <button onclick="setGalleryEnhanceMode('hdr')" id="btn-mode-hdr" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow transition-all">
+                        ✨ Pro HDR (Enhanced)
+                    </button>
+                    <button onclick="setGalleryEnhanceMode('neon')" id="btn-mode-neon" class="px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800 transition-all">
+                        🌙 Neon Night
+                    </button>
+                    <button onclick="setGalleryEnhanceMode('golden')" id="btn-mode-golden" class="px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800 transition-all">
+                        ☀️ Golden Warm
+                    </button>
+                    <button onclick="setGalleryEnhanceMode('raw')" id="btn-mode-raw" class="px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800 transition-all">
+                        📷 Original Raw
+                    </button>
+                </div>
+            </div>
+
+            <!-- Interactive Before / After HDR Comparison Spotlight -->
+            <div class="mb-10 glass-card rounded-3xl p-4 sm:p-6 border border-cyan-500/30 reveal">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 font-bangla">
+                    <div>
+                        <h3 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-eye text-cyan-400"></i> ইন্টারেক্টিভ ফটো এনহ্যান্সমেন্ট স্লাইডার (Drag Slider to Compare)
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-400">ডান-বামে স্লাইডার টেনে দেখো হাবিব রিসোর্টের রাতের লেক ভিউ এবং আমাদের HDR এনহ্যান্সড ভার্সন!</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="switchComparisonPhoto(0)" class="px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-cyan-300 border border-slate-700">লেক ভিউ</button>
+                        <button onclick="switchComparisonPhoto(1)" class="px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-amber-300 border border-slate-700">লুমিনা লন</button>
+                        <button onclick="switchComparisonPhoto(2)" class="px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-emerald-300 border border-slate-700">ওভারওয়াটার ভিলা</button>
+                    </div>
+                </div>
+
+                <!-- Before / After Container -->
+                <div class="relative w-full h-[260px] sm:h-[420px] rounded-2xl overflow-hidden select-none border border-slate-700" id="ba-container">
+                    <!-- Base Layer: Enhanced HDR Image -->
+                    <img id="ba-after-img" src="assets/resort-08.jpg" alt="Enhanced HDR" class="absolute inset-0 w-full h-full object-cover enhance-hdr night-shot">
+                    <span class="absolute top-4 right-4 z-20 px-3 py-1 rounded-full bg-cyan-500/90 text-midnight font-bold text-xs shadow-lg">
+                        ✨ HDR ENHANCED
+                    </span>
+
+                    <!-- Top Clipped Layer: Raw Image -->
+                    <div id="ba-before-wrapper" class="absolute inset-0 w-1/2 overflow-hidden border-r-2 border-cyan-400">
+                        <img id="ba-before-img" src="assets/resort-08.jpg" alt="Original Raw" class="absolute inset-0 w-full h-full max-w-none object-cover" style="filter: brightness(0.88) contrast(0.95);">
+                        <span class="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-slate-900/90 text-slate-300 font-bold text-xs border border-slate-700">
+                            📷 ORIGINAL RAW
+                        </span>
+                    </div>
+
+                    <!-- Range Input Overlay for Smooth Touch & Mouse Dragging -->
+                    <input type="range" min="5" max="95" value="50" id="ba-slider" oninput="updateBeforeAfter(this.value)" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30">
+
+                    <!-- Visual Handle -->
+                    <div id="ba-handle" class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-cyan-400 text-midnight shadow-xl shadow-cyan-500/50 flex items-center justify-center pointer-events-none z-20 border-2 border-white">
+                        <i class="fa-solid fa-arrows-left-right text-sm"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Filter Pills for the 10 Photos -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-8 font-bangla">
+                <button onclick="filterGallery('all')" class="gal-filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-blue-600 text-white transition-all" data-filter="all">
+                    সবগুলো ছবি (১০টি)
+                </button>
+                <button onclick="filterGallery('night')" class="gal-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-card text-slate-300 hover:text-white transition-all" data-filter="night">
+                    🌙 নাইট অ্যাম্বিয়েন্স ও লেক (৭টি)
+                </button>
+                <button onclick="filterGallery('day')" class="gal-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-card text-slate-300 hover:text-white transition-all" data-filter="day">
+                    ☀️ ডে-লাইট ও সবুজ ক্যাম্পাস (৩টি)
+                </button>
+            </div>
+
+            <!-- Dynamic Bento Grid of All 10 Uploaded Habib Resort Photos -->
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-5 reveal">
+                <!-- Populated dynamically via JS using the exact 10 uploaded filenames -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= INTERACTIVE VIRTUAL RAG DAY T-SHIRT SCRIBBLE WALL ================= -->
+    <section id="scribble-wall" class="py-16 sm:py-24 bg-deepnavy/70 border-y border-slate-800/80 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 font-bangla reveal">
+                <span class="px-3.5 py-1.5 rounded-full bg-rose-500/15 border border-rose-500/30 text-rose-300 text-xs font-bold uppercase tracking-wider">
+                    🖊️ VIRTUAL RAG DAY T-SHIRT WALL
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-3">
+                    টি-শার্টে স্মৃতির আঁকিবুঁকি <span class="text-gradient-blue">(Scribble Wall)</span> 👕💙
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base">
+                    র‍্যাগ ডে-র সবচেয়ে আবেগের মুহূর্ত হলো বন্ধুদের সাদা টি-শার্টে মার্কার দিয়ে প্রিয় কিছু কথা লিখে দেওয়া! ১৩ নভেম্বরের আগেই আমাদের এই ভার্চুয়াল টি-শার্ট ওয়ালে তোমার ব্যাচমেটদের উদ্দেশ্যে একটি নোট লিখে পিন করে দাও!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start reveal">
+                <!-- Left: Write on T-Shirt Form -->
+                <div class="lg:col-span-5 glass-card rounded-3xl p-6 sm:p-7 border border-blue-500/30 font-bangla">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-pen-fancy text-cyan-400"></i> তোমার মেমোরি নোট লেখো
+                    </h3>
+                    <form id="scribble-form" onsubmit="addScribbleNote(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs text-slate-300 mb-1.5 font-semibold">তোমার নাম / ডাকনাম (Your Name / Nickname)</label>
+                            <input type="text" id="scribble-author" required maxlength="28" placeholder="যেমন: তানভীর / সুমাইয়া (Intake 26)" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-slate-300 mb-1.5 font-semibold">টি-শার্টে কী লিখতে চাও? (Short Rag Day Note)</label>
+                            <textarea id="scribble-text" required maxlength="110" rows="3" placeholder="যেমন: তোদের সাথে কাটানো এই ৪টা বছর জীবনের সেরা সময় হয়ে থাকবে! দেখা হবে ১৩ নভেম্বর! 💙" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-slate-300 mb-2 font-semibold">মার্কার কালার বেছে নাও (Marker Color)</label>
+                            <div class="flex items-center gap-3">
+                                <button type="button" onclick="selectMarkerColor('cyan')" class="marker-btn w-8 h-8 rounded-full bg-cyan-400 ring-4 ring-white/40 transition-all" data-color="cyan"></button>
+                                <button type="button" onclick="selectMarkerColor('amber')" class="marker-btn w-8 h-8 rounded-full bg-amber-400 transition-all" data-color="amber"></button>
+                                <button type="button" onclick="selectMarkerColor('rose')" class="marker-btn w-8 h-8 rounded-full bg-rose-400 transition-all" data-color="rose"></button>
+                                <button type="button" onclick="selectMarkerColor('emerald')" class="marker-btn w-8 h-8 rounded-full bg-emerald-400 transition-all" data-color="emerald"></button>
+                                <button type="button" onclick="selectMarkerColor('purple')" class="marker-btn w-8 h-8 rounded-full bg-purple-400 transition-all" data-color="purple"></button>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-sm shadow-lg shadow-cyan-500/20 flex items-center justify-center gap-2 transition-all hover:scale-[1.01]">
+                            <i class="fa-solid fa-thumbtack"></i> টি-শার্ট ওয়ালে পিন করো!
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Right: Interactive Virtual T-Shirt & Notes Board -->
+                <div class="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-8 border border-slate-700/80 relative min-h-[420px] flex flex-col justify-between overflow-hidden">
+                    <!-- Subtle T-Shirt Watermark Silhouette in Background -->
+                    <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+                        <i class="fa-solid fa-shirt text-[280px] sm:text-[360px] text-cyan-300"></i>
+                    </div>
+
+                    <div class="relative z-10 flex items-center justify-between border-b border-slate-800 pb-4 mb-5">
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <h4 class="font-bold text-white text-sm sm:text-base font-bangla">👕 INTAKE 26 SIGNATURE BOARD</h4>
+                        </div>
+                        <span id="scribble-count" class="text-xs font-mono text-cyan-400 px-2.5 py-1 rounded-full bg-cyan-950/70 border border-cyan-500/30">6 Notes Pinned</span>
+                    </div>
+
+                    <!-- Notes Grid -->
+                    <div id="scribble-notes-container" class="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-h-[380px] overflow-y-auto pr-1 font-bangla">
+                        <!-- Populated via JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ROUTE GUIDE: JAHANGIRNAGAR UNIVERSITY TO HABIB RESORT ================= -->
+    <section id="route" class="py-16 sm:py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 font-bangla reveal">
+                <span class="px-3.5 py-1.5 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 text-xs font-bold uppercase tracking-wider">
+                    🗺️ CAMPUS TO VENUE ROUTE PLANNER
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-3">
+                    জাহাঙ্গীরনগর বিশ্ববিদ্যালয় ➔ <span class="text-gradient-gold">হাবিব রিসোর্ট রুট</span> 🚌📍
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base">
+                    জাহাঙ্গীরনগর বিশ্ববিদ্যালয় (JU Campus) থেকে মাত্র <strong class="text-cyan-300">১৫–২০ মিনিটের</strong> দূরত্বে ডেন্ডাবর ১৩৪৪ (পল্লী বিদ্যুৎ / নবীনগর সংলগ্ন নরসিংহপুর-ডেন্ডাবর রোড) এলাকায় অবস্থিত আমাদের ভেন্যু <strong>হাবিব রিসোর্ট অ্যান্ড কনভেনশন হল</strong>।
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch reveal">
+                <!-- Left: Interactive Visual Map & Transport Mode Selector -->
+                <div class="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-8 border border-cyan-500/30 flex flex-col justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 font-bangla">
+                            <div>
+                                <span class="text-xs font-mono uppercase text-cyan-400 block">LIVE ROUTE VISUALIZER</span>
+                                <h3 class="text-xl font-bold text-white">যাতায়াত মাধ্যম সিলেক্ট করো:</h3>
+                            </div>
+                            <!-- Transport Mode Tabs -->
+                            <div class="flex items-center gap-2 bg-slate-900/90 p-1.5 rounded-xl border border-slate-800">
+                                <button onclick="setRouteMode('bus')" id="route-btn-bus" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white transition-all">
+                                    🚌 রিজার্ভ বাস / লোকাল বাস
+                                </button>
+                                <button onclick="setRouteMode('auto')" id="route-btn-auto" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all">
+                                    🛺 অটো / লেগুনা
+                                </button>
+                                <button onclick="setRouteMode('bike')" id="route-btn-bike" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all">
+                                    🏍️ বাইক / গাড়ি
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Animated SVG Route Map -->
+                        <div class="relative rounded-2xl bg-gradient-to-br from-slate-950 via-blue-950/40 to-slate-900 border border-slate-800 p-4 sm:p-6 overflow-hidden mb-6">
+                            <!-- Grid Background Pattern -->
+                            <div class="absolute inset-0 opacity-15" style="background-image: radial-gradient(#38BDF8 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+                            <svg viewBox="0 0 700 240" class="w-full h-auto relative z-10">
+                                <defs>
+                                    <linearGradient id="routeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#3B82F6" />
+                                        <stop offset="50%" stop-color="#06B6D4" />
+                                        <stop offset="100%" stop-color="#F59E0B" />
+                                    </linearGradient>
+                                    <filter id="glow">
+                                        <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                                        <feMerge>
+                                            <feMergeNode in="coloredBlur"/>
+                                            <feMergeNode in="SourceGraphic"/>
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+
+                                <!-- Highway Base Path -->
+                                <path d="M 60 180 C 190 180, 230 95, 360 95 C 480 95, 520 65, 630 65" 
+                                      fill="none" stroke="#1E293B" stroke-width="14" stroke-linecap="round"/>
+
+                                <!-- Glowing Animated Route Line -->
+                                <path d="M 60 180 C 190 180, 230 95, 360 95 C 480 95, 520 65, 630 65" 
+                                      fill="none" stroke="url(#routeGrad)" stroke-width="5" stroke-linecap="round" class="route-line" filter="url(#glow)"/>
+
+                                <!-- Node 1: Jahangirnagar University (Dairy Gate / Prantik Gate) -->
+                                <g transform="translate(60, 180)">
+                                    <circle r="18" fill="#1D4ED8" opacity="0.3">
+                                        <animate attributeName="r" values="14;24;14" dur="2.5s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <circle r="10" fill="#3B82F6" stroke="#fff" stroke-width="2.5"/>
+                                    <text x="0" y="34" text-anchor="middle" fill="#E2E8F0" font-size="12" font-weight="bold">🎓 জাবি ডেইরি/প্রান্তিক গেট</text>
+                                    <text x="0" y="50" text-anchor="middle" fill="#94A3B8" font-size="10">Jahangirnagar Univ.</text>
+                                </g>
+
+                                <!-- Node 2: Savar Cantonment / C&B Road -->
+                                <g transform="translate(235, 130)">
+                                    <circle r="7" fill="#06B6D4" stroke="#050814" stroke-width="2"/>
+                                    <text x="0" y="-16" text-anchor="middle" fill="#CBD5E1" font-size="11" font-weight="600">সাভার ক্যান্টনমেন্ট</text>
+                                    <text x="0" y="-3" text-anchor="middle" fill="#64748B" font-size="9">Dhaka-Aricha Hwy</text>
+                                </g>
+
+                                <!-- Node 3: Palli Bidyut / Dendabor Turn -->
+                                <g transform="translate(430, 90)">
+                                    <circle r="8" fill="#38BDF8" stroke="#fff" stroke-width="2"/>
+                                    <text x="0" y="25" text-anchor="middle" fill="#38BDF8" font-size="11" font-weight="bold">পল্লী বিদ্যুৎ / ডেন্ডাবর মোড়</text>
+                                    <text x="0" y="39" text-anchor="middle" fill="#94A3B8" font-size="10">Dendabor 1344 Turn</text>
+                                </g>
+
+                                <!-- Node 4: Habib Resort & Convention Hall -->
+                                <g transform="translate(630, 65)">
+                                    <circle r="22" fill="#F59E0B" opacity="0.3">
+                                        <animate attributeName="r" values="16;28;16" dur="2s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <circle r="12" fill="#F59E0B" stroke="#fff" stroke-width="3"/>
+                                    <text x="-10" y="-22" text-anchor="end" fill="#FCD34D" font-size="13" font-weight="bold">📍 হাবিব রিসোর্ট</text>
+                                    <text x="-10" y="-7" text-anchor="end" fill="#FDE68A" font-size="10">Noringar tek, Dendabor 1344</text>
+                                </g>
+                            </svg>
+
+                            <!-- Dynamic Route Metrics Bar -->
+                            <div class="grid grid-cols-3 gap-3 mt-4 pt-4 border-t border-slate-800/80 text-center font-bangla">
+                                <div>
+                                    <span class="text-[11px] text-slate-400 block">দূরত্ব (Distance)</span>
+                                    <span id="route-distance" class="text-sm sm:text-base font-bold text-white">~৫.৫ কি.মি. (5.5 KM)</span>
+                                </div>
+                                <div>
+                                    <span class="text-[11px] text-slate-400 block">আনুমানিক সময় (Time)</span>
+                                    <span id="route-time" class="text-sm sm:text-base font-bold text-cyan-300">১৫–২০ মিনিট</span>
+                                </div>
+                                <div>
+                                    <span class="text-[11px] text-slate-400 block">যাতায়াত খরচ (Est. Cost)</span>
+                                    <span id="route-cost" class="text-sm sm:text-base font-bold text-amber-300">৳২০–৩০ / জন</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Transport Advice Box -->
+                        <div id="route-advice-box" class="p-4 rounded-2xl bg-blue-950/50 border border-blue-500/30 text-sm text-slate-200 font-bangla mb-6">
+                            🚌 <strong>রিজার্ভ বাস / লোকাল বাস গাইড:</strong> জাবি ডেইরি গেট বা প্রান্তিক গেট থেকে ঢাকা-আরিচা মহাসড়কে নবীনগরগামী যেকোনো বাসে উঠে মাত্র ৮-১০ মিনিটে <strong>পল্লী বিদ্যুৎ / ডেন্ডাবর মোড়ে</strong> নামতে হবে। সেখান থেকে রিকশা বা অটোতে ৪-৫ মিনিটেই <strong>হাবিব রিসোর্ট অ্যান্ড কনভেনশন হল (নরিঙ্গার টেক, ডেন্ডাবর ১৩৪৪)</strong>!
+                        </div>
+                    </div>
+
+                    <!-- Direct Google Maps Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-3 font-bangla">
+                        <a href="https://www.google.com/maps/dir/Jahangirnagar+University,+Savar/Habib+Resort+and+Convention+Hall,+Dendabor+1344" 
+                           target="_blank" rel="noopener noreferrer"
+                           class="flex-1 py-3.5 px-5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-midnight font-extrabold text-sm flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.01]">
+                            <i class="fa-solid fa-diamond-turn-right text-base"></i>
+                            <span>Google Maps-এ লাইভ ডিরেকশন দেখো</span>
+                        </a>
+                        <a href="https://maps.google.com/?cid=12955285770080917326" 
+                           target="_blank" rel="noopener noreferrer"
+                           class="py-3.5 px-5 rounded-xl glass-card hover:bg-slate-800 text-cyan-300 font-bold text-sm border border-cyan-500/30 flex items-center justify-center gap-2 transition-all">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <span>ভেন্যু পিন (4.6★)</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Step-by-Step Checkpoint Cards -->
+                <div class="lg:col-span-5 space-y-4 font-bangla flex flex-col justify-between">
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800 flex gap-4 items-start">
+                        <div class="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/40 text-blue-400 font-mono font-bold flex items-center justify-center shrink-0">01</div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">জাহাঙ্গীরনগর বিশ্ববিদ্যালয় (JU Campus)</h4>
+                            <p class="text-xs sm:text-sm text-slate-300 mt-1">সকাল ৮:১৫ মিনিটে সবাই ডেইরি গেট অথবা প্রান্তিক গেটে একত্রিত হবো। বন্ধুদের সাথে গ্রুপ ফটো তুলে যাত্রা শুরু!</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800 flex gap-4 items-start">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-600/20 border border-cyan-500/40 text-cyan-400 font-mono font-bold flex items-center justify-center shrink-0">02</div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">ঢাকা-আরিচা মহাসড়ক (টুওয়ার্ডস নবীনগর)</h4>
+                            <p class="text-xs sm:text-sm text-slate-300 mt-1">সাভার ক্যান্টনমেন্ট পার হয়ে উত্তর দিকে নবীনগর রোডে ৩.৫ কি.মি. এগিয়ে গেলে পড়বে পল্লী বিদ্যুৎ / ডেন্ডাবর এলাকা।</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border border-slate-800 flex gap-4 items-start">
+                        <div class="w-10 h-10 rounded-xl bg-purple-600/20 border border-purple-500/40 text-purple-400 font-mono font-bold flex items-center justify-center shrink-0">03</div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">পল্লী বিদ্যুৎ / ডেন্ডাবর মোড় (Post Code: 1344)</h4>
+                            <p class="text-xs sm:text-sm text-slate-300 mt-1">ডেন্ডাবর মোড় বা পল্লী বিদ্যুৎ স্টপেজ থেকে ভেতরের পাকা রাস্তা ধরে ডেন্ডাবর কেন্দ্রীয় কবরস্থানের পাশের রোডে রিকশা/অটো নিবে।</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border border-amber-500/40 bg-gradient-to-r from-amber-950/30 to-slate-900/80 flex gap-4 items-start">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500 text-midnight font-mono font-extrabold flex items-center justify-center shrink-0">04</div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h4 class="font-bold text-amber-300 text-base">হাবিব রিসোর্ট অ্যান্ড কনভেনশন হল</h4>
+                                <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-400/30">Noringar tek, 1344</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-200 mt-1">রিসোর্টের গ্র্যান্ড আর্চওয়ে গেটে পৌঁছালেই আমাদের ওয়েলকাম টিম তোমাদের রিসিভ করবে! 📞 রিসোর্ট হেল্পলাইন: <span class="font-mono text-cyan-300">+880 1711-329082</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ONLINE REGISTRATION & INSTANT VIP TICKET GENERATOR ================= -->
+    <section id="register" class="py-16 sm:py-24 bg-gradient-to-b from-deepnavy/90 via-midnight to-midnight border-t border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 font-bangla reveal">
+                <span class="px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider">
+                    💰 রেজিস্ট্রেশন ফি: মাত্র ১৯৯৯ টাকা
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-3">
+                    রেজিস্ট্রেশন করো ও <span class="text-gradient-blue">ডিজিটাল পাস</span> ডাউনলোড করো! 🎟️🚀
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base">
+                    বিকাশ, নগদ অথবা ব্যাংকিং-এর মাধ্যমে ১৯৯৯ টাকা পাঠিয়ে নিচের ফর্মটি পূরণ করলেই সাথে সাথে পেয়ে যাবে তোমার অফিশিয়াল <strong class="text-amber-300">Intake 26 Rag Day Digital Entry Pass</strong>!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start reveal">
+                <!-- Left Column (5 cols): Package Breakdown & Payment Gateway Instructions -->
+                <div class="lg:col-span-5 space-y-6 font-bangla">
+                    <!-- Package Value Card -->
+                    <div class="glass-card rounded-3xl p-6 sm:p-7 border border-blue-500/30 relative overflow-hidden">
+                        <div class="absolute -right-10 -top-10 w-36 h-36 bg-blue-600/20 rounded-full blur-2xl pointer-events-none"></div>
+                        <div class="flex items-baseline justify-between border-b border-slate-800 pb-4 mb-5">
+                            <div>
+                                <span class="text-xs font-mono uppercase text-cyan-400 block">ALL-INCLUSIVE PASS</span>
+                                <h3 class="text-2xl font-extrabold text-white">রেজিস্ট্রেশন প্যাকেজ</h3>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-3xl sm:text-4xl font-black text-gradient-gold">৳১৯৯৯</span>
+                                <span class="block text-[11px] text-slate-400">প্রতি জন (All Inclusive)</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-slate-200">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                <span>এক্সক্লুসিভ <strong>Intake 26 Rag Day T-Shirt</strong> ও রিস্টব্যান্ড</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                <span>হাবিব রিসোর্ট ফুল-ডে এন্ট্রি, লন ও লেক প্যাডেল বোটিং</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                <span>ওয়েলকাম ড্রিংকস, সকালের নাস্তা, স্পেশাল লাঞ্চ ও বিকেলের স্ন্যাকস</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                <span>গেমস, কালচারাল প্রোগ্রাম ও LUMINA মিউজিক্যাল নাইট</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                <span>প্রফেশনাল DSLR ও ড্রোন ফটোগ্রাফি + সিনেমাটিক আফটারমুভি</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Interactive Payment Method Tabs (bKash / Nagad / Banking) -->
+                    <div class="glass-card rounded-3xl p-6 sm:p-7 border border-amber-500/30">
+                        <h3 class="text-lg font-bold text-white mb-1 flex items-center gap-2">
+                            <i class="fa-solid fa-wallet text-amber-400"></i> টাকা পাঠানোর ব্যবস্থা (Payment Info)
+                        </h3>
+                        <p class="text-xs text-slate-400 mb-4">নিচের যেকোনো মাধ্যমে টাকা পাঠিয়ে ফর্মের ভেতর Transaction ID (TrxID) দাও:</p>
+
+                        <!-- Payment Method Selector Buttons -->
+                        <div class="grid grid-cols-3 gap-2 mb-5">
+                            <button type="button" onclick="switchPaymentTab('bkash')" id="pay-tab-bkash" class="py-2.5 px-3 rounded-xl font-bold text-xs sm:text-sm bg-pink-600 text-white shadow-lg shadow-pink-600/30 transition-all">
+                                📲 বিকাশ (bKash)
+                            </button>
+                            <button type="button" onclick="switchPaymentTab('nagad')" id="pay-tab-nagad" class="py-2.5 px-3 rounded-xl font-bold text-xs sm:text-sm bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">
+                                🔥 নগদ (Nagad)                            </button>
+                            <button type="button" onclick="switchPaymentTab('bank')" id="pay-tab-bank" class="py-2.5 px-3 rounded-xl font-bold text-xs sm:text-sm bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">
+                                🏦 ব্যাংকিং (Bank)
+                            </button>
+                        </div>
+
+                        <!-- Dynamic Payment Content Box -->
+                        <div id="payment-details-box" class="p-4 rounded-2xl bg-slate-900/95 border border-pink-500/40 space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs uppercase font-mono text-pink-400 font-bold">bKash Send Money (Personal)</span>
+                                <span class="text-xs px-2 py-0.5 rounded bg-pink-500/20 text-pink-300">Active 24/7</span>
+                            </div>
+                            <div class="flex items-center justify-between bg-slate-950 p-3 rounded-xl border border-slate-800">
+                                <div>
+                                    <p class="text-xs text-slate-400">বিকাশ নাম্বার (রেফারেন্স: <span class="text-white font-mono">RAG26</span>)</p>
+                                    <p id="pay-number-display" class="text-lg sm:text-xl font-mono font-bold text-white tracking-wider">01711-262626</p>
+                                </div>
+                                <button type="button" onclick="copyPaymentNumber('01711262626')" class="px-3.5 py-2 rounded-lg bg-pink-600/20 hover:bg-pink-600/40 text-pink-300 border border-pink-500/30 text-xs font-bold flex items-center gap-1.5 transition-all">
+                                    <i class="fa-regular fa-copy"></i> Copy
+                                </button>
+                            </div>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                💡 <strong>টিপস:</strong> সেন্ড মানি করার সময় রেফারেন্সে তোমার <strong>Name / Roll</strong> লিখবে এবং সেন্ড মানি সফল হলে <strong>TrxID</strong> কপি করে রাখবে।
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column (7 cols): Interactive Registration Form -->
+                <div class="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-8 border border-cyan-500/30 font-bangla">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+                        <div>
+                            <span class="text-xs font-mono uppercase text-cyan-400">INSTANT E-PASS GENERATOR</span>
+                            <h3 class="text-xl sm:text-2xl font-extrabold text-white">রেজিস্ট্রেশন ফর্ম — INTAKE 26</h3>
+                        </div>
+                        <span class="w-11 h-11 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl">
+                            <i class="fa-solid fa-id-card-clip"></i>
+                        </span>
+                    </div>
+
+                    <form id="rag-reg-form" onsubmit="handleRegistrationSubmit(event)" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">পূর্ণ নাম (Full Name) *</label>
+                                <input type="text" id="reg-name" required placeholder="যেমন: Md. Rafiul Islam" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">স্টুডেন্ট আইডি / রোল (Student ID) *</label>
+                                <input type="text" id="reg-id" required placeholder="যেমন: 26-1042" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white text-sm font-mono focus:outline-none focus:border-cyan-400">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">মোবাইল নাম্বার (Phone Number) *</label>
+                                <input type="tel" id="reg-phone" required placeholder="01XXXXXXXXX" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white text-sm font-mono focus:outline-none focus:border-cyan-400">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">বিভাগ / সেকশন (Department / Batch Info)</label>
+                                <input type="text" id="reg-dept" placeholder="যেমন: Intake 26 - Section A" value="Intake 26" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400">
+                            </div>
+                        </div>
+
+                        <!-- T-Shirt Size Selector & Blood Group -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">টি-শার্ট সাইজ (Rag Day T-Shirt Size) *</label>
+                                <div class="grid grid-cols-5 gap-1.5" id="tshirt-size-group">
+                                    <button type="button" onclick="selectTshirtSize('S')" class="size-btn py-2.5 rounded-xl border border-slate-700 bg-slate-900 text-xs font-mono font-bold text-slate-300 hover:border-cyan-400" data-size="S">S</button>
+                                    <button type="button" onclick="selectTshirtSize('M')" class="size-btn py-2.5 rounded-xl border border-slate-700 bg-slate-900 text-xs font-mono font-bold text-slate-300 hover:border-cyan-400" data-size="M">M</button>
+                                    <button type="button" onclick="selectTshirtSize('L')" class="size-btn py-2.5 rounded-xl border-2 border-cyan-400 bg-cyan-500/20 text-xs font-mono font-bold text-white" data-size="L">L</button>
+                                    <button type="button" onclick="selectTshirtSize('XL')" class="size-btn py-2.5 rounded-xl border border-slate-700 bg-slate-900 text-xs font-mono font-bold text-slate-300 hover:border-cyan-400" data-size="XL">XL</button>
+                                    <button type="button" onclick="selectTshirtSize('XXL')" class="size-btn py-2.5 rounded-xl border border-slate-700 bg-slate-900 text-xs font-mono font-bold text-slate-300 hover:border-cyan-400" data-size="XXL">XXL</button>
+                                </div>
+                                <input type="hidden" id="reg-tshirt" value="L">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">ব্লাড গ্রুপ ও ট্রান্সপোর্ট পিকআপ পয়েন্ট</label>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <select id="reg-blood" class="px-3 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400">
+                                        <option value="O+">Blood: O+</option>
+                                        <option value="A+">Blood: A+</option>
+                                        <option value="B+">Blood: B+</option>
+                                        <option value="AB+">Blood: AB+</option>
+                                        <option value="O-">Blood: O-</option>
+                                        <option value="A-">Blood: A-</option>
+                                        <option value="B-">Blood: B-</option>
+                                        <option value="AB-">Blood: AB-</option>
+                                    </select>
+                                    <select id="reg-pickup" class="px-3 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400">
+                                        <option value="JU Dairy Gate">জাবি ডেইরি গেট</option>
+                                        <option value="JU Prantik Gate">জাবি প্রান্তিক গেট</option>
+                                        <option value="Direct at Resort">সরাসরি রিসোর্টে</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method & TrxID -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">পেমেন্ট মেথড *</label>
+                                <select id="reg-pay-method" class="w-full px-3.5 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400">
+                                    <option value="bKash (বিকাশ)">📲 bKash (বিকাশ)</option>
+                                    <option value="Nagad (নগদ)">🔥 Nagad (নগদ)</option>
+                                    <option value="Bank (ব্যাংকিং)">🏦 Bank (ব্যাংকিং)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">যে নাম্বার থেকে পাঠিয়েছো *</label>
+                                <input type="text" id="reg-sender" required placeholder="Last 4 digits / Number" class="w-full px-3.5 py-3 rounded-xl bg-slate-950 border border-slate-700 text-white text-sm font-mono focus:outline-none focus:border-cyan-400">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Transaction ID (TrxID) *</label>
+                                <input type="text" id="reg-trxid" required placeholder="যেমন: BK9826X7L" class="w-full px-3.5 py-3 rounded-xl bg-slate-950 border border-slate-700 text-amber-300 text-sm font-mono uppercase focus:outline-none focus:border-cyan-400">
+                            </div>
+                        </div>
+
+                        <!-- Cultural Participation / Short Quote -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">কালচারাল প্রোগ্রামে অংশ নিতে চাও কি? / ব্যাচ নোট (ঐচ্ছিক)</label>
+                            <input type="text" id="reg-note" placeholder="যেমন: গানে/নাচে অংশ নিতে চাই অথবা 'Intake 26 Forever 💙'" class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400">
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-extrabold text-base sm:text-lg shadow-xl shadow-blue-600/30 flex items-center justify-center gap-3 transition-all hover:scale-[1.01] active:scale-95">
+                            <i class="fa-solid fa-ticket-simple"></i>
+                            <span>রেজিস্ট্রেশন কনফার্ম ও ভিআইপি পাস তৈরি করো!</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ================= GENERATED DIGITAL VIP RAG DAY PASS (SHOWS AFTER REGISTRATION OR PREVIEW) ================= -->
+            <div id="vip-pass-wrapper" class="mt-12 max-w-3xl mx-auto reveal">
+                <div class="flex items-center justify-between mb-4 font-bangla">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                        <h3 class="text-base sm:text-lg font-bold text-white">🎟️ অফিশিয়াল ডিজিটাল এন্ট্রি পাস প্রিভিউ (Live VIP Pass)</h3>
+                    </div>
+                    <button onclick="downloadPassAsPNG()" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-midnight font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg transition-all">
+                        <i class="fa-solid fa-download"></i> ডাউনলোড পাস (PNG)
+                    </button>
+                </div>
+
+                <!-- Visual Pass Card -->
+                <div id="visual-ticket-card" class="relative rounded-3xl overflow-hidden bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border-2 border-cyan-500/40 shadow-2xl shadow-cyan-500/10 p-6 sm:p-8">
+                    <div class="ticket-cutout-left"></div>
+                    <div class="ticket-cutout-right"></div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                        <!-- Ticket Left Details -->
+                        <div class="md:col-span-8 space-y-4 md:border-r md:border-dashed md:border-slate-700 md:pr-6">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-400/30 text-xs font-mono font-bold">
+                                    🎓 RAG DAY — INTAKE 26 VIP PASS
+                                </span>
+                                <span id="pass-ticket-no" class="font-mono text-xs text-amber-300 font-bold">#RAG26-8492</span>
+                            </div>
+
+                            <div>
+                                <p class="text-xs text-slate-400 uppercase font-mono">Attendee Name</p>
+                                <h4 id="pass-name" class="text-2xl sm:text-3xl font-black text-white tracking-tight">INTAKE 26 LEGEND</h4>
+                                <p id="pass-meta" class="text-xs sm:text-sm text-cyan-300 font-mono mt-0.5">ID: 26-XXXX • Pickup: JU Dairy Gate</p>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-3 pt-2 border-t border-slate-800/80 font-bangla">
+                                <div>
+                                    <span class="text-[11px] text-slate-400 block">তারিখ</span>
+                                    <span class="text-xs sm:text-sm font-bold text-white">১৩ নভেম্বর ২০২৬</span>
+                                </div>
+                                <div>
+                                    <span class="text-[11px] text-slate-400 block">ভেন্যু</span>
+                                    <span class="text-xs sm:text-sm font-bold text-amber-300">হাবিব রিসোর্ট, সাভার</span>
+                                </div>
+                                <div>
+                                    <span class="text-[11px] text-slate-400 block">টি-শার্ট ও ফি</span>
+                                    <span id="pass-tshirt" class="text-xs sm:text-sm font-bold text-emerald-300">Size: L • ৳১৯৯৯ Paid</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ticket Right QR & Badge -->
+                        <div class="md:col-span-4 flex flex-col items-center justify-center text-center">
+                            <div class="w-28 h-28 rounded-2xl bg-white p-2.5 shadow-inner flex items-center justify-center mb-2">
+                                <!-- Dynamic SVG QR Code Pattern -->
+                                <svg id="pass-qr-svg" viewBox="0 0 100 100" class="w-full h-full text-slate-900">
+                                    <rect x="5" y="5" width="26" height="26" fill="none" stroke="currentColor" stroke-width="6"/>
+                                    <rect x="13" y="13" width="10" height="10" fill="currentColor"/>
+                                    <rect x="69" y="5" width="26" height="26" fill="none" stroke="currentColor" stroke-width="6"/>
+                                    <rect x="77" y="13" width="10" height="10" fill="currentColor"/>
+                                    <rect x="5" y="69" width="26" height="26" fill="none" stroke="currentColor" stroke-width="6"/>
+                                    <rect x="13" y="77" width="10" height="10" fill="currentColor"/>
+                                    <rect x="40" y="10" width="8" height="8" fill="currentColor"/>
+                                    <rect x="52" y="18" width="8" height="16" fill="currentColor"/>
+                                    <rect x="38" y="38" width="24" height="24" fill="none" stroke="#2563EB" stroke-width="5"/>
+                                    <rect x="46" y="46" width="8" height="8" fill="#2563EB"/>
+                                    <rect x="10" y="42" width="18" height="8" fill="currentColor"/>
+                                    <rect x="70" y="44" width="10" height="18" fill="currentColor"/>
+                                    <rect x="42" y="72" width="16" height="8" fill="currentColor"/>
+                                    <rect x="68" y="70" width="24" height="10" fill="currentColor"/>
+                                    <rect x="76" y="84" width="16" height="10" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <span id="pass-trx-badge" class="text-[11px] font-mono text-emerald-300 bg-emerald-950/80 border border-emerald-500/30 px-2.5 py-0.5 rounded-full">
+                                VERIFIED INTAKE 26
+                            </span>
+                            <p class="text-[10px] text-slate-400 mt-1">One Batch. One Bond.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= LIVE REGISTERED SQUAD WALL ================= -->
+    <section id="squad" class="py-16 sm:py-20 bg-deepnavy/50 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4 font-bangla reveal">
+                <div>
+                    <span class="text-xs font-mono uppercase text-cyan-400">🎉 LIVE BATCHMATE ROSTER</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-1">
+                        যারা ইতোমধ্যে যুক্ত হয়েছে <span class="text-gradient-blue">(Intake 26 Squad)</span>
+                    </h2>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                        <input type="text" id="squad-search" oninput="renderSquadList()" placeholder="নাম বা আইডি খুঁজো..." class="pl-9 pr-4 py-2 rounded-xl bg-slate-900 border border-slate-700 text-xs sm:text-sm text-white focus:outline-none focus:border-cyan-400">
+                    </div>
+                    <span id="squad-total-badge" class="px-3.5 py-2 rounded-xl bg-blue-600/20 border border-blue-500/30 text-cyan-300 font-mono text-xs sm:text-sm font-bold">
+                        8 Joined
+                    </span>
+                </div>
+            </div>
+
+            <div id="squad-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 font-bangla reveal">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="py-12 border-t border-slate-800/80 bg-midnight text-center font-bangla relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="inline-flex items-center gap-2.5 mb-4">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <span class="font-extrabold text-xl text-white">RAG DAY — <span class="text-cyan-400">INTAKE 26</span></span>
+            </div>
+            <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-6">
+                🔥 The vibe is ours. 💙 The memories are ours. 🎓 THE RAG DAY IS OURS!<br>
+                <strong>LET'S MAKE IT LEGENDARY! 🚀💙</strong>
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-xs text-slate-400 mb-6">
+                <span>📅 ১৩ নভেম্বর ২০২৬</span>
+                <span>•</span>
+                <span>📍 হাবিব রিসোর্ট অ্যান্ড কনভেনশন হল, ডেন্ডাবর ১৩৪৪, সাভার</span>
+                <span>•</span>
+                <span>💰 রেজিস্ট্রেশন ফি: ১৯৯৯ টাকা</span>
+            </div>
+            <p class="text-xs text-slate-500 font-mono">
+                Crafted with 💙 for Intake 26 • One Batch. One Bond. Endless Memories.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ================= LIGHTBOX MODAL FOR FULL-SCREEN ENHANCED RESORT PHOTOS ================= -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-midnight/95 backdrop-blur-xl flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-5 right-5 w-11 h-11 rounded-full bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-lg border border-slate-600 z-20">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <button onclick="navigateLightbox(-1)" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-slate-800/80 hover:bg-blue-600 text-white flex items-center justify-center text-lg border border-slate-600 z-20">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button onclick="navigateLightbox(1)" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-slate-800/80 hover:bg-blue-600 text-white flex items-center justify-center text-lg border border-slate-600 z-20">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="max-w-5xl w-full flex flex-col items-center">
+            <div class="relative rounded-2xl overflow-hidden border border-cyan-500/30 shadow-2xl max-h-[75vh]">
+                <img id="lightbox-img" src="" alt="Habib Resort Full View" class="max-h-[75vh] w-auto object-contain enhance-hdr">
+            </div>
+            <div class="mt-4 text-center font-bangla max-w-xl">
+                <span id="lightbox-badge" class="text-xs font-mono uppercase text-amber-300">✨ PRO HDR ENHANCED</span>
+                <h4 id="lightbox-title" class="text-lg sm:text-xl font-bold text-white mt-0.5"></h4>
+                <p id="lightbox-desc" class="text-xs sm:text-sm text-slate-300 mt-1"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Toast Notification Box (No alert() used!) -->
+    <div id="toast-box" class="fixed bottom-5 right-5 z-50 hidden transform transition-all duration-300 translate-y-4 opacity-0">
+        <div class="glass-card px-5 py-3.5 rounded-2xl border border-cyan-400/50 shadow-2xl flex items-center gap-3 font-bangla">
+            <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+            <span id="toast-msg" class="text-sm font-semibold text-white"></span>
+        </div>
+    </div>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        /* -----------------------------------------------------------
+         * 1. ALL 10 UPLOADED HABIB RESORT PHOTOS DATA & HDR CONFIG
+         * ----------------------------------------------------------- */
+        const resortPhotos = [
+            {
+                file: "assets/resort-08.jpg",
+                title: "হাবিব রিসোর্ট লেকফ্রন্ট ও সোয়ান প্যাডেল বোট",
+                subtitle: "Lakefront & Swan Boats at Night",
+                desc: "রাতের আলোয় ঝলমলে হাবিব রিসোর্টের বিশাল লেক এবং হলুদ সোয়ান প্যাডেল বোট—যেখানে কাটবে আমাদের র‍্যাগ ডে-র দারুণ মুহূর্ত!",
+                category: "night",
+                isNight: true,
+                colSpan: "lg:col-span-8",
+                heightClass: "h-72 sm:h-96"
+            },
+            {
+                file: "assets/resort-09.jpg",
+                title: "রঙিন ল্যান্টার্ন ওয়াকওয়ে (Lantern Alley)",
+                subtitle: "Magical Colorful Lantern Walkway",
+                desc: "গাছের ডালে ঝুলন্ত নীল, হলুদ, লাল ও সবুজ ল্যান্টার্নের আলোয় বন্ধুদের সাথে হাঁটা ও গ্রুপ ছবির সেরা স্পট।",
+                category: "night",
+                isNight: true,
+                colSpan: "lg:col-span-4",
+                heightClass: "h-72 sm:h-96"
+            },
+            {
+                file: "assets/resort-06.jpg",
+                title: "ওভারওয়াটার রিসোর্ট ভিলা ও নিয়ন রিফ্লেকশন",
+                subtitle: "Overwater Resort Villa",
+                desc: "লেকের পানির ওপর গড়ে ওঠা আধুনিক রিসোর্ট ভবন এবং পানিতে রঙিন আলোর মনোমুগ্ধকর প্রতিফলন।",
+                category: "night",
+                isNight: true,
+                colSpan: "lg:col-span-6",
+                heightClass: "h-64 sm:h-80"
+            },
+            {
+                file: "assets/resort-10.jpg",
+                title: "LUMINA কনভেনশন হল ও গ্র্যান্ড লন",
+                subtitle: "Lumina Convention Lawn & Light Towers",
+                desc: "সুবিশাল সবুজ লন ও সুউচ্চ গোল্ডেন লাইট টাওয়ার—এখানেই জমবে আমাদের কালচারাল প্রোগ্রাম ও আড্ডা!",
+                category: "night",
+                isNight: true,
+                colSpan: "lg:col-span-6",
+                heightClass: "h-64 sm:h-80"
+            },
+            {
+                file: "assets/resort-05.jpg",
+                title: "গোল্ডেন আওয়ার গার্ডেন বেঞ্চ",
+                subtitle: "Golden Lights & Adda Corner",
+                desc: "গাছের নিচে সোনালী আলোর মায়াবী পরিবেশে রাজকীয় বেঞ্চ—পোর্ট্রেট ছবি তোলার জন্য পারফেক্ট ফ্রেম।",
+                category: "night",
+                isNight: false,
+                colSpan: "lg:col-span-4",
+                heightClass: "h-72 sm:h-80"
+            },
+            {
+                file: "assets/resort-07.jpg",
+                title: "ইলিউমিনেটেড লেক ব্রিজ ও এলইডি ফ্লাওয়ার",
+                subtitle: "Illuminated Bridge & LED Arch",
+                desc: "লেকের ওপর আলোকিত ব্রিজ ও নান্দনিক এলইডি ফুলের ভাস্কর্য।",
+                category: "night",
+                isNight: true,
+                colSpan: "lg:col-span-4",
+                heightClass: "h-72 sm:h-80"
+            },
+            {
+                file: "assets/resort-13.jpg",
+                title: "ব্যালকনি থেকে পুরো রিসোর্টের প্যানোরামা ভিউ",
+                subtitle: "Balcony Panorama Overlooking Resort",
+                desc: "সন্ধ্যার আলোয় ওপরের ব্যালকনি থেকে পুরো মাঠ ও আলোকিত রিসোর্টের এক অসাধারণ দৃশ্য।",
+                category: "night",
+                isNight: true,
+                colSpan: "lg:col-span-4",
+                heightClass: "h-72 sm:h-80"
+            },
+            {
+                file: "assets/resort-14.jpg",
+                title: "রয়্যাল পাম সানসেট লন (Green Field)",
+                subtitle: "Royal Palm Sunset Lawn",
+                desc: "গোধূলি বেলায় সারি সারি পাম গাছের পাশে সবুজ ঘাসের মাঠ ও কাঠের বেঞ্চ।",
+                category: "day",
+                isNight: false,
+                colSpan: "lg:col-span-4",
+                heightClass: "h-64 sm:h-72"
+            },
+            {
+                file: "assets/resort-12.jpg",
+                title: "হাবিব রিসোর্টের গ্র্যান্ড এন্ট্রান্স গেটওয়ে",
+                subtitle: "Grand Archway Entrance Driveway",
+                desc: "ডেন্ডাবর ১৩৪৪-এ অবস্থিত হাবিব রিসোর্টের প্রশস্ত প্রবেশপথ ও কালো কারুকাজ করা তোরণ।",
+                category: "day",
+                isNight: false,
+                colSpan: "lg:col-span-4",
+                heightClass: "h-64 sm:h-72"
+            },
+            {
+                file: "assets/resort-11.jpg",
+                title: "সবুজ পাম অ্যাভিনিউ ওয়াকওয়ে",
+                subtitle: "Green Palm Avenue",
+                desc: "দুপাশে সবুজ গাছ ও পাম সারির মাঝখান দিয়ে চলে যাওয়া প্রশান্তিময় হাঁটার পথ।",
+                category: "day",
+                isNight: false,
+                colSpan: "lg:col-span-4",
+                heightClass: "h-64 sm:h-72"
+            }
+        ];
+
+        let currentEnhanceMode = 'hdr';
+        let currentCategoryFilter = 'all';
+        let currentLightboxIndex = 0;
+
+        /* Render the 10-Photo Bento Grid */
+        function renderGallery() {
+            const grid = document.getElementById('gallery-grid');
+            if (!grid) return;
+
+            const filtered = resortPhotos.map((item, idx) => ({ ...item, originalIndex: idx }))
+                .filter(item => currentCategoryFilter === 'all' || item.category === currentCategoryFilter);
+
+            const enhanceClassMap = {
+                'hdr': 'enhance-hdr',
+                'neon': 'enhance-neon',
+                'golden': 'enhance-golden',
+                'raw': 'enhance-raw'
+            };
+
+            const badgeLabelMap = {
+                'hdr': '✨ HDR Enhanced',
+                'neon': '🌙 Neon Boost',
+                'golden': '☀️ Golden Film',
+                'raw': '📷 Original Raw'
+            };
+
+            grid.innerHTML = filtered.map(photo => {
+                const modeClass = enhanceClassMap[currentEnhanceMode] + (photo.isNight && currentEnhanceMode === 'hdr' ? ' night-shot' : '');
+                return `
+                    <div onclick="openLightbox(${photo.originalIndex})" 
+                         class="${photo.colSpan} ${photo.heightClass} photo-frame rounded-3xl border border-slate-700/80 hover:border-cyan-400/70 group cursor-pointer shadow-xl transition-all duration-300">
+                        <img src="${photo.file}" 
+                             alt="${photo.title}" 
+                             loading="lazy"
+                             class="w-full h-full object-cover ${modeClass} group-hover:scale-105"
+                             onerror="this.src='https://placehold.co/800x600/0B1124/38BDF8?text=Habib+Resort'">
+                        
+                        ${currentEnhanceMode !== 'raw' ? '<div class="absolute inset-0 hdr-overlay"></div>' : '<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>'}
+                        
+                        <!-- Top Right Enhancement Badge -->
+                        <div class="absolute top-3.5 right-3.5 px-2.5 py-1 rounded-full bg-midnight/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-cyan-300 flex items-center gap-1">
+                            <span>${badgeLabelMap[currentEnhanceMode]}</span>
+                        </div>
+
+                        <!-- Bottom Caption -->
+                        <div class="absolute bottom-0 inset-x-0 p-5 flex items-end justify-between gap-3 font-bangla">
+                            <div>
+                                <span class="text-[10px] font-mono uppercase tracking-wider text-amber-300 block">${photo.subtitle}</span>
+                                <h3 class="text-base sm:text-lg font-bold text-white leading-snug">${photo.title}</h3>
+                                <p class="text-xs text-slate-300 line-clamp-1 mt-0.5">${photo.desc}</p>
+                            </div>
+                            <div class="w-9 h-9 rounded-xl bg-white/15 group-hover:bg-cyan-500 group-hover:text-midnight text-white flex items-center justify-center shrink-0 transition-colors">
+                                <i class="fa-solid fa-magnifying-glass-plus text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function setGalleryEnhanceMode(mode) {
+            currentEnhanceMode = mode;
+            ['hdr', 'neon', 'golden', 'raw'].forEach(m => {
+                const btn = document.getElementById(`btn-mode-${m}`);
+                if (!btn) return;
+                if (m === mode) {
+                    btn.className = "px-3 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow transition-all";
+                } else {
+                    btn.className = "px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800 transition-all";
+                }
+            });
+            renderGallery();
+            showToast(`ফটো গ্যালারি মোড: ${mode.toUpperCase()} অ্যাক্টিভ করা হয়েছে!`);
+        }
+
+        function filterGallery(category) {
+            currentCategoryFilter = category;
+            document.querySelectorAll('.gal-filter-btn').forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.className = "gal-filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-blue-600 text-white transition-all";
+                } else {
+                    btn.className = "gal-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold glass-card text-slate-300 hover:text-white transition-all";
+                }
+            });
+            renderGallery();
+        }
+
+        /* Before / After Slider Logic */
+        const comparisonPhotos = [
+            "assets/resort-08.jpg",
+            "assets/resort-10.jpg",
+            "assets/resort-06.jpg"
+        ];
+
+        function updateBeforeAfter(val) {
+            const wrapper = document.getElementById('ba-before-wrapper');
+            const handle = document.getElementById('ba-handle');
+            const container = document.getElementById('ba-container');
+            const beforeImg = document.getElementById('ba-before-img');
+            if (wrapper && handle && container && beforeImg) {
+                wrapper.style.width = `${val}%`;
+                handle.style.left = `${val}%`;
+                beforeImg.style.width = `${container.offsetWidth}px`;
+            }
+        }
+
+        function switchComparisonPhoto(index) {
+            const file = comparisonPhotos[index] || comparisonPhotos[0];
+            document.getElementById('ba-after-img').src = file;
+            document.getElementById('ba-before-img').src = file;
+            updateBeforeAfter(document.getElementById('ba-slider').value);
+        }
+
+        window.addEventListener('resize', () => {
+            const slider = document.getElementById('ba-slider');
+            if (slider) updateBeforeAfter(slider.value);
+        });
+
+        /* Lightbox Modal Logic */
+        function openLightbox(index) {
+            currentLightboxIndex = index;
+            updateLightboxContent();
+            document.getElementById('lightbox-modal').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox-modal').classList.add('hidden');
+        }
+
+        function navigateLightbox(dir) {
+            currentLightboxIndex = (currentLightboxIndex + dir + resortPhotos.length) % resortPhotos.length;
+            updateLightboxContent();
+        }
+
+        function updateLightboxContent() {
+            const item = resortPhotos[currentLightboxIndex];
+            const img = document.getElementById('lightbox-img');
+            img.src = item.file;
+            img.className = `max-h-[75vh] w-auto object-contain enhance-${currentEnhanceMode} ${item.isNight ? 'night-shot' : ''}`;
+            document.getElementById('lightbox-title').textContent = item.title;
+            document.getElementById('lightbox-desc').textContent = item.desc;
+        }
+
+        /* -----------------------------------------------------------
+         * 2. COUNTDOWN TIMER TO NOVEMBER 13, 2026
+         * ----------------------------------------------------------- */
+        function updateCountdown() {
+            const eventDate = new Date("2026-11-13T08:30:00+06:00").getTime();
+            const now = new Date().getTime();
+            const diff = Math.max(0, eventDate - now);
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+            document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+            document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+        }
+
+        /* -----------------------------------------------------------
+         * 3. VIRTUAL T-SHIRT SCRIBBLE WALL LOGIC
+         * ----------------------------------------------------------- */
+        let selectedMarker = 'cyan';
+        const defaultScribbles = [
+            { author: "সাদমান সাকিব (Intake 26)", text: "একটা ব্যাচ, হাজারো গল্প! তোদের সবাইকে ছাড়া ক্যাম্পাস লাইফ কল্পনাই করা যায় না 💙", color: "cyan", time: "Just now" },
+            { author: "নুসরাত জাহান মিম", text: "হাবিব রিসোর্টের ল্যান্টার্ন ওয়াকওয়েতে সবার সাথে শত শত ছবি তুলবো ১৩ নভেম্বর! ✨📸", color: "amber", time: "10m ago" },
+            { author: "তানভীর আহমেদ", text: "One Batch. One Bond. Endless Memories! Intake 26 র‍্যাগ ডে ইতিহাসের সেরা হবে 🔥", color: "rose", time: "25m ago" },
+            { author: "ফারহান ও রাকিন", text: "লেকের সোয়ান বোটে চড়ে আর গানের কোরাসে গলা মিলিয়ে দিনটা মাতিয়ে রাখবো সবাই! 🎸🛶", color: "emerald", time: "1h ago" },
+            { author: "তাসনিম তাবাসসুম", text: "বহু বছর পরেও এই দিনের ছবিগুলো আমাদের মুখে হাসি ফুটিয়ে তুলবে 🫶🎓", color: "purple", time: "2h ago" },
+            { author: "মাহমুদুল হাসান", text: "লেটস মেক ইট লেজেন্ডারি ইনটেক ২৬! দেখা হচ্ছে ১৩ নভেম্বর সকাল ৮টায়! 🚀💙", color: "cyan", time: "3h ago" }
+        ];
+
+        function getScribbles() {
+            try {
+                const saved = localStorage.getItem('intake26_scribbles');
+                return saved ? JSON.parse(saved) : defaultScribbles;
+            } catch (e) {
+                return defaultScribbles;
+            }
+        }
+
+        function selectMarkerColor(color) {
+            selectedMarker = color;
+            document.querySelectorAll('.marker-btn').forEach(btn => {
+                if (btn.dataset.color === color) {
+                    btn.classList.add('ring-4', 'ring-white/60', 'scale-110');
+                } else {
+                    btn.classList.remove('ring-4', 'ring-white/60', 'scale-110');
+                }
+            });
+        }
+
+        function renderScribbles() {
+            const list = getScribbles();
+            const container = document.getElementById('scribble-notes-container');
+            const countBadge = document.getElementById('scribble-count');
+            if (!container) return;
+
+            countBadge.textContent = `${list.length} Notes Pinned`;
+
+            const colorStyles = {
+                cyan: "border-cyan-500/40 bg-cyan-950/30 text-cyan-200",
+                amber: "border-amber-500/40 bg-amber-950/30 text-amber-200",
+                rose: "border-rose-500/40 bg-rose-950/30 text-rose-200",
+                emerald: "border-emerald-500/40 bg-emerald-950/30 text-emerald-200",
+                purple: "border-purple-500/40 bg-purple-950/30 text-purple-200"
+            };
+
+            container.innerHTML = list.map(item => `
+                <div class="p-4 rounded-2xl border ${colorStyles[item.color] || colorStyles.cyan} shadow-md transition-transform hover:-translate-y-0.5">
+                    <p class="text-xs sm:text-sm italic leading-relaxed mb-2.5">“${escapeHtml(item.text)}”</p>
+                    <div class="flex items-center justify-between text-[11px] opacity-80 font-mono">
+                        <span class="font-bold font-bangla">— ${escapeHtml(item.author)}</span>
+                        <span>${item.time}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addScribbleNote(e) {
+            e.preventDefault();
+            const authorInput = document.getElementById('scribble-author');
+            const textInput = document.getElementById('scribble-text');
+            if (!authorInput.value.trim() || !textInput.value.trim()) return;
+
+            const list = getScribbles();
+            list.unshift({
+                author: authorInput.value.trim(),
+                text: textInput.value.trim(),
+                color: selectedMarker,
+                time: "এইমাত্র"
+            });
+
+            try {
+                localStorage.setItem('intake26_scribbles', JSON.stringify(list));
+            } catch (err) {}
+
+            authorInput.value = '';
+            textInput.value = '';
+            renderScribbles();
+            triggerCelebration();
+            showToast("👕 তোমার মেমোরি নোট টি-শার্ট ওয়ালে পিন করা হয়েছে!");
+        }
+
+        /* -----------------------------------------------------------
+         * 4. JU TO HABIB RESORT ROUTE MODE SWITCHER
+         * ----------------------------------------------------------- */
+        function setRouteMode(mode) {
+            const modes = {
+                bus: {
+                    dist: "~৫.৫ কি.মি. (5.5 KM)",
+                    time: "১৫–২০ মিনিট",
+                    cost: "৳২০–৩০ / জন",
+                    advice: "🚌 <strong>রিজার্ভ বাস / লোকাল বাস গাইড:</strong> জাবি ডেইরি গেট বা প্রান্তিক গেট থেকে ঢাকা-আরিচা মহাসড়কে নবীনগরগামী যেকোনো বাসে উঠে মাত্র ৮-১০ মিনিটে <strong>পল্লী বিদ্যুৎ / ডেন্ডাবর মোড়ে</strong> নামতে হবে। সেখান থেকে রিকশা বা অটোতে ৪-৫ মিনিটেই <strong>হাবিব রিসোর্ট অ্যান্ড কনভেনশন হল (নরিঙ্গার টেক, ডেন্ডাবর ১৩৪৪)</strong>!"
+                },
+                auto: {
+                    dist: "~৫.৫ কি.মি. (5.5 KM)",
+                    time: "১২–১৫ মিনিট",
+                    cost: "৳৪০–৫০ / জন (রিজার্ভ অটো)",
+                    advice: "🛺 <strong>অটো / লেগুনা গাইড:</strong> ৪-৫ জন বন্ধু মিলে প্রান্তিক গেট বা ডেইরি গেট থেকে সরাসরি পল্লী বিদ্যুৎ / ডেন্ডাবর কবরস্থান রোড হয়ে হাবিব রিসোর্টের গেট পর্যন্ত রিজার্ভ অটো নিয়ে নিতে পারো!"
+                },
+                bike: {
+                    dist: "~৫.৫ কি.মি. (5.5 KM)",
+                    time: "১০–১২ মিনিট",
+                    cost: "ফ্রি পার্কিং সুবিধা",
+                    advice: "🏍️ <strong>বাইক / পার্সোনাল গাড়ি গাইড:</strong> ঢাকা-আরিচা মহাসড়ক ধরে ডেন্ডাবর ১৩৪৪ (পল্লী বিদ্যুৎ ইউ-টার্ন) হয়ে নরসিংহপুর-ডেন্ডাবর রোডে ঢুকলেই হাবিব রিসোর্ট। রিসোর্টের ভেতর প্রশস্ত পার্কিং সুবিধা রয়েছে।"
+                }
+            };
+
+            const selected = modes[mode];
+            document.getElementById('route-distance').textContent = selected.dist;
+            document.getElementById('route-time').textContent = selected.time;
+            document.getElementById('route-cost').textContent = selected.cost;
+            document.getElementById('route-advice-box').innerHTML = selected.advice;
+
+            ['bus', 'auto', 'bike'].forEach(m => {
+                const btn = document.getElementById(`route-btn-${m}`);
+                if (m === mode) {
+                    btn.className = "px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white transition-all";
+                } else {
+                    btn.className = "px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all";
+                }
+            });
+        }
+
+        /* -----------------------------------------------------------
+         * 5. PAYMENT TABS & REGISTRATION + DIGITAL VIP PASS
+         * ----------------------------------------------------------- */
+        function switchPaymentTab(method) {
+            const box = document.getElementById('payment-details-box');
+            const tabs = {
+                bkash: {
+                    btnClass: "bg-pink-600 text-white shadow-lg shadow-pink-600/30",
+                    html: `
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs uppercase font-mono text-pink-400 font-bold">bKash Send Money (Personal)</span>
+                            <span class="text-xs px-2 py-0.5 rounded bg-pink-500/20 text-pink-300">Active 24/7</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-slate-950 p-3 rounded-xl border border-slate-800">
+                            <div>
+                                <p class="text-xs text-slate-400">বিকাশ নাম্বার (রেফারেন্স: <span class="text-white font-mono">RAG26</span>)</p>
+                                <p class="text-lg sm:text-xl font-mono font-bold text-white tracking-wider">01711-262626</p>
+                            </div>
+                            <button type="button" onclick="copyPaymentNumber('01711262626')" class="px-3.5 py-2 rounded-lg bg-pink-600/20 hover:bg-pink-600/40 text-pink-300 border border-pink-500/30 text-xs font-bold flex items-center gap-1.5 transition-all">
+                                <i class="fa-regular fa-copy"></i> Copy
+                            </button>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            💡 <strong>টিপস:</strong> বিকাশ সেন্ড মানি করার সময় রেফারেন্সে তোমার <strong>ID/Name</strong> লিখবে এবং <strong>TrxID</strong> ফর্মের ভেতর দিবে।
+                        </p>
+                    `
+                },
+                nagad: {
+                    btnClass: "bg-orange-600 text-white shadow-lg shadow-orange-600/30",
+                    html: `
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs uppercase font-mono text-orange-400 font-bold">Nagad Send Money (Personal)</span>
+                            <span class="text-xs px-2 py-0.5 rounded bg-orange-500/20 text-orange-300">Instant Verify</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-slate-950 p-3 rounded-xl border border-slate-800">
+                            <div>
+                                <p class="text-xs text-slate-400">নগদ নাম্বার (রেফারেন্স: <span class="text-white font-mono">RAG26</span>)</p>
+                                <p class="text-lg sm:text-xl font-mono font-bold text-white tracking-wider">01819-262626</p>
+                            </div>
+                            <button type="button" onclick="copyPaymentNumber('01819262626')" class="px-3.5 py-2 rounded-lg bg-orange-600/20 hover:bg-orange-600/40 text-orange-300 border border-orange-500/30 text-xs font-bold flex items-center gap-1.5 transition-all">
+                                <i class="fa-regular fa-copy"></i> Copy
+                            </button>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            💡 <strong>টিপস:</strong> নগদ অ্যাপ থেকে ১৯৯৯ টাকা সেন্ড মানি করে <strong>Transaction ID</strong> কপি করে রেজিস্ট্রেশন সম্পন্ন করো।
+                        </p>
+                    `
+                },
+                bank: {
+                    btnClass: "bg-blue-600 text-white shadow-lg shadow-blue-600/30",
+                    html: `
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs uppercase font-mono text-cyan-400 font-bold">Bank / NPSB / CellFin Transfer</span>
+                            <span class="text-xs px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300">Zero Fee</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-slate-950 p-3 rounded-xl border border-slate-800">
+                            <div>
+                                <p class="text-xs text-slate-400">City Bank / DBBL A/C (Intake 26 Rag Committee)</p>
+                                <p class="text-base sm:text-lg font-mono font-bold text-white tracking-wider">140260002613</p>
+                            </div>
+                            <button type="button" onclick="copyPaymentNumber('140260002613')" class="px-3.5 py-2 rounded-lg bg-cyan-600/20 hover:bg-cyan-600/40 text-cyan-300 border border-cyan-500/30 text-xs font-bold flex items-center gap-1.5 transition-all">
+                                <i class="fa-regular fa-copy"></i> Copy
+                            </button>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            💡 <strong>টিপস:</strong> ব্যাংক ট্রান্সফার বা ফান্ড ট্রান্সফারের রেফারেন্স নাম্বারটি <strong>TrxID</strong> ঘরে উল্লেখ করো।
+                        </p>
+                    `
+                }
+            };
+
+            ['bkash', 'nagad', 'bank'].forEach(m => {
+                const btn = document.getElementById(`pay-tab-${m}`);
+                if (m === method) {
+                    btn.className = `py-2.5 px-3 rounded-xl font-bold text-xs sm:text-sm transition-all ${tabs[m].btnClass}`;
+                } else {
+                    btn.className = "py-2.5 px-3 rounded-xl font-bold text-xs sm:text-sm bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all";
+                }
+            });
+
+            box.innerHTML = tabs[method].html;
+        }
+
+        function copyPaymentNumber(num) {
+            const temp = document.createElement('textarea');
+            temp.value = num;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            showToast(`📋 নাম্বার কপি হয়েছে: ${num}`);
+        }
+
+        function selectTshirtSize(size) {
+            document.getElementById('reg-tshirt').value = size;
+            document.querySelectorAll('.size-btn').forEach(btn => {
+                if (btn.dataset.size === size) {
+                    btn.className = "size-btn py-2.5 rounded-xl border-2 border-cyan-400 bg-cyan-500/20 text-xs font-mono font-bold text-white";
+                } else {
+                    btn.className = "size-btn py-2.5 rounded-xl border border-slate-700 bg-slate-900 text-xs font-mono font-bold text-slate-300 hover:border-cyan-400";
+                }
+            });
+        }
+
+        /* Default Demo Registered Batchmates */
+        const defaultSquad = [
+            { name: "রাফিউল ইসলাম", id: "26-1012", tshirt: "L", pickup: "JU Dairy Gate", method: "bKash (বিকাশ)", ticketNo: "RAG26-1012" },
+            { name: "সাদিয়া আফরিন", id: "26-1019", tshirt: "M", pickup: "JU Prantik Gate", method: "bKash (বিকাশ)", ticketNo: "RAG26-1019" },
+            { name: "তানভীর হাসান", id: "26-1028", tshirt: "XL", pickup: "JU Dairy Gate", method: "Nagad (নগদ)", ticketNo: "RAG26-1028" },
+            { name: "মেহেদী হাসান হৃদয়", id: "26-1034", tshirt: "L", pickup: "JU Dairy Gate", method: "bKash (বিকাশ)", ticketNo: "RAG26-1034" },
+            { name: "তাসনিয়া নূর", id: "26-1041", tshirt: "S", pickup: "JU Prantik Gate", method: "Bank (ব্যাংকিং)", ticketNo: "RAG26-1041" },
+            { name: "ফারহান সাদিক", id: "26-1055", tshirt: "L", pickup: "JU Dairy Gate", method: "bKash (বিকাশ)", ticketNo: "RAG26-1055" },
+            { name: "নাফিসা তাবাসসুম", id: "26-1063", tshirt: "M", pickup: "JU Dairy Gate", method: "Nagad (নগদ)", ticketNo: "RAG26-1063" },
+            { name: "শাহরিয়ার কবির", id: "26-1077", tshirt: "XL", pickup: "Direct at Resort", method: "bKash (বিকাশ)", ticketNo: "RAG26-1077" }
+        ];
+
+        function getSquadList() {
+            try {
+                const saved = localStorage.getItem('intake26_squad');
+                return saved ? JSON.parse(saved) : defaultSquad;
+            } catch (e) {
+                return defaultSquad;
+            }
+        }
+
+        function renderSquadList() {
+            const squad = getSquadList();
+            const query = (document.getElementById('squad-search')?.value || '').toLowerCase();
+            const filtered = squad.filter(m => m.name.toLowerCase().includes(query) || m.id.toLowerCase().includes(query));
+
+            document.getElementById('squad-total-badge').textContent = `${squad.length} Joined`;
+
+            const grid = document.getElementById('squad-grid');
+            if (!grid) return;
+
+            grid.innerHTML = filtered.map(member => `
+                <div class="glass-card p-4 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all flex items-center gap-3.5">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-600/30 to-cyan-500/30 border border-cyan-400/30 flex items-center justify-center font-bold text-cyan-300 text-base shrink-0">
+                        ${escapeHtml(member.name.charAt(0))}
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <div class="flex items-center justify-between gap-1">
+                            <h4 class="font-bold text-white text-sm truncate">${escapeHtml(member.name)}</h4>
+                            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">👕 ${escapeHtml(member.tshirt)}</span>
+                        </div>
+                        <p class="text-xs text-slate-400 font-mono truncate">ID: ${escapeHtml(member.id)} • ${escapeHtml(member.ticketNo)}</p>
+                        <p class="text-[11px] text-cyan-400 mt-0.5 truncate">📍 ${escapeHtml(member.pickup)}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function handleRegistrationSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('reg-name').value.trim();
+            const id = document.getElementById('reg-id').value.trim();
+            const phone = document.getElementById('reg-phone').value.trim();
+            const tshirt = document.getElementById('reg-tshirt').value;
+            const pickup = document.getElementById('reg-pickup').value;
+            const method = document.getElementById('reg-pay-method').value;
+            const trxid = document.getElementById('reg-trxid').value.trim().toUpperCase();
+
+            if (!name || !id || !trxid) return;
+
+            const randomDigits = Math.floor(1000 + Math.random() * 9000);
+            const ticketNo = `RAG26-${randomDigits}`;
+
+            // Update Visual VIP Pass
+            document.getElementById('pass-ticket-no').textContent = `#${ticketNo}`;
+            document.getElementById('pass-name').textContent = name.toUpperCase();
+            document.getElementById('pass-meta').textContent = `ID: ${id} • Pickup: ${pickup}`;
+            document.getElementById('pass-tshirt').textContent = `Size: ${tshirt} • ৳১৯৯৯ (${method.split(' ')[0]})`;
+            document.getElementById('pass-trx-badge').textContent = `TrxID: ${trxid}`;
+
+            // Add to Live Squad
+            const squad = getSquadList();
+            squad.unshift({
+                name,
+                id,
+                tshirt,
+                pickup,
+                method,
+                ticketNo
+            });
+
+            try {
+                localStorage.setItem('intake26_squad', JSON.stringify(squad));
+            } catch (err) {}
+
+            renderSquadList();
+            triggerCelebration();
+            showToast(`🎉 অভিনন্দন ${name}! তোমার র‍্যাগ ডে ভিআইপি পাস তৈরি হয়েছে!`);
+
+            // Smooth scroll to the generated pass
+            document.getElementById('vip-pass-wrapper').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        /* High-Resolution Canvas PNG Ticket Downloader */
+        function downloadPassAsPNG() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 900;
+            canvas.height = 420;
+            const ctx = canvas.getContext('2d');
+
+            // Background Gradient
+            const grad = ctx.createLinearGradient(0, 0, 900, 420);
+            grad.addColorStop(0, '#070B19');
+            grad.addColorStop(0.5, '#1E1B4B');
+            grad.addColorStop(1, '#0F172A');
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, 900, 420);
+
+            // Neon Border
+            ctx.strokeStyle = '#38BDF8';
+            ctx.lineWidth = 4;
+            ctx.strokeRect(16, 16, 868, 388);
+
+            // Header Tag
+            ctx.fillStyle = '#38BDF8';
+            ctx.font = 'bold 16px monospace';
+            ctx.fillText('🎓 RAG DAY — INTAKE 26 | OFFICIAL VIP ENTRY PASS', 45, 65);
+
+            // Ticket Number
+            const ticketNo = document.getElementById('pass-ticket-no').textContent;
+            ctx.fillStyle = '#FBBF24';
+            ctx.font = 'bold 20px monospace';
+            ctx.fillText(ticketNo, 480, 65);
+
+            // Attendee Name
+            const name = document.getElementById('pass-name').textContent;
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = '900 38px sans-serif';
+            ctx.fillText(name.substring(0, 24), 45, 130);
+
+            // Attendee Meta
+            const meta = document.getElementById('pass-meta').textContent;
+            ctx.fillStyle = '#67E8F9';
+            ctx.font = '600 18px monospace';
+            ctx.fillText(meta, 45, 168);
+
+            // Event Details
+            ctx.fillStyle = '#94A3B8';
+            ctx.font = '15px sans-serif';
+            ctx.fillText('DATE: 13 NOVEMBER 2026', 45, 235);
+            ctx.fillText('VENUE: HABIB RESORT, DENDABOR 1344, SAVAR', 45, 265);
+
+            const tshirtInfo = document.getElementById('pass-tshirt').textContent;
+            ctx.fillStyle = '#34D399';
+            ctx.font = 'bold 18px monospace';
+            ctx.fillText(tshirtInfo, 45, 310);
+
+            ctx.fillStyle = '#E2E8F0';
+            ctx.font = 'italic 16px sans-serif';
+            ctx.fillText('💙 One Batch. One Bond. Endless Memories. 💙', 45, 365);
+
+            // Divider Line
+            ctx.setLineDash([10, 8]);
+            ctx.strokeStyle = '#475569';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(630, 35);
+            ctx.lineTo(630, 385);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Right QR Box
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fillRect(685, 85, 150, 150);
+            ctx.fillStyle = '#0F172A';
+            ctx.fillRect(700, 100, 35, 35);
+            ctx.fillRect(785, 100, 35, 35);
+            ctx.fillRect(700, 185, 35, 35);
+            ctx.fillStyle = '#2563EB';
+            ctx.fillRect(745, 145, 30, 30);
+
+            const trxBadge = document.getElementById('pass-trx-badge').textContent;
+            ctx.fillStyle = '#34D399';
+            ctx.font = 'bold 15px monospace';
+            ctx.fillText(trxBadge, 685, 275);
+
+            ctx.fillStyle = '#FBBF24';
+            ctx.font = 'bold 14px monospace';
+            ctx.fillText('FEE: 1999 BDT', 705, 305);
+
+            const link = document.createElement('a');
+            link.download = `${ticketNo}-Intake26-RagDay-Pass.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            showToast("🎟️ ডিজিটাল ভিআইপি পাস ডাউনলোড হয়েছে!");
+        }
+
+        /* -----------------------------------------------------------
+         * 6. CONFETTI CANNON & AMBIENT HERO FIREFLIES
+         * ----------------------------------------------------------- */
+        const confettiCanvas = document.getElementById('confetti-canvas');
+        const confettiCtx = confettiCanvas.getContext('2d');
+        let confettiPieces = [];
+
+        function resizeConfettiCanvas() {
+            confettiCanvas.width = window.innerWidth;
+            confettiCanvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeConfettiCanvas);
+        resizeConfettiCanvas();
+        function triggerCelebration() {
+            const colors = ['#38BDF8', '#2563EB', '#F59E0B', '#EC4899', '#10B981', '#A855F7'];
+            for (let i = 0; i < 85; i++) {
+                confettiPieces.push({
+                    x: window.innerWidth / 2 + (Math.random() - 0.5) * 240,
+                    y: window.innerHeight * 0.55,
+                    vx: (Math.random() - 0.5) * 16,
+                    vy: -Math.random() * 16 - 5,
+                    size: Math.random() * 8 + 5,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    rotation: Math.random() * 360,
+                    vRot: (Math.random() - 0.5) * 12,
+                    alpha: 1
+                });
+            }
+        }
+
+        function animateConfetti() {
+            confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+            for (let i = confettiPieces.length - 1; i >= 0; i--) {
+                const p = confettiPieces[i];
+                p.x += p.vx;
+                p.y += p.vy;
+                p.vy += 0.35; // gravity
+                p.rotation += p.vRot;
+                p.alpha -= 0.008;
+
+                if (p.alpha <= 0 || p.y > confettiCanvas.height + 30) {
+                    confettiPieces.splice(i, 1);
+                    continue;
+                }
+
+                confettiCtx.save();
+                confettiCtx.globalAlpha = Math.max(0, p.alpha);
+                confettiCtx.translate(p.x, p.y);
+                confettiCtx.rotate((p.rotation * Math.PI) / 180);
+                confettiCtx.fillStyle = p.color;
+                confettiCtx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.65);
+                confettiCtx.restore();
+            }
+            requestAnimationFrame(animateConfetti);
+        }
+
+        /* Hero Ambient Firefly Particles */
+        function initHeroFireflies() {
+            const canvas = document.getElementById('hero-particles');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+
+            const fireflies = Array.from({ length: 38 }, () => ({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                r: Math.random() * 2.4 + 0.8,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: -Math.random() * 0.5 - 0.15,
+                hue: Math.random() > 0.45 ? 195 : 42,
+                alpha: Math.random() * 0.7 + 0.2
+            }));
+
+            function drawFireflies() {
+                ctx.clearRect(0, 0, width, height);
+                fireflies.forEach(f => {
+                    f.x += f.vx;
+                    f.y += f.vy;
+                    if (f.y < 0) f.y = height;
+                    if (f.x < 0) f.x = width;
+                    if (f.x > width) f.x = 0;
+
+                    ctx.beginPath();
+                    ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `hsla(${f.hue}, 95%, 68%, ${f.alpha})`;
+                    ctx.shadowBlur = 12;
+                    ctx.shadowColor = `hsla(${f.hue}, 95%, 68%, 0.9)`;
+                    ctx.fill();
+                });
+                requestAnimationFrame(drawFireflies);
+            }
+            drawFireflies();
+        }
+
+        /* -----------------------------------------------------------
+         * 7. UTILITIES: MOBILE MENU, TOAST, SCROLL REVEAL
+         * ----------------------------------------------------------- */
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            icon.className = menu.classList.contains('hidden') ? 'fa-solid fa-bars text-lg' : 'fa-solid fa-xmark text-lg';
+        }
+
+        let toastTimeout;
+        function showToast(msg) {
+            const box = document.getElementById('toast-box');
+            const msgEl = document.getElementById('toast-msg');
+            msgEl.textContent = msg;
+            box.classList.remove('hidden', 'translate-y-4', 'opacity-0');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                box.classList.add('translate-y-4', 'opacity-0');
+                setTimeout(() => box.classList.add('hidden'), 300);
+            }, 3400);
+        }
+
+        function escapeHtml(str) {
+            return String(str).replace(/[&<>"']/g, m => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[m]));
+        }
+
+        function setupScrollReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        /* Initialize Everything on Window Load */
+        window.onload = function () {
+            renderGallery();
+            updateBeforeAfter(50);
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            renderScribbles();
+            renderSquadList();
+            animateConfetti();
+            initHeroFireflies();
+            setupScrollReveal();
+        };
+    </script>
+</body>
+</html>
